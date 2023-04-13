@@ -1,19 +1,17 @@
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
-import { BlazeLayout } from "meteor/kadira:blaze-layout";
+// import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
-import '../../ui/pages/home.js';
 import '../../ui/pages/co2.js';
 
-FlowRouter.route("/home", {
-  name: "home",
+FlowRouter.route('/co2', {
+  name: 'App.home',
   action() {
-    BlazeLayout.render("home");
-  }
-}),
-
-FlowRouter.route("/co2", {
-  name: "co2",
-  action(){
-    BlazeLayout.render("co2SVG");
-  }
+    this.render('co2SVG');
+  },
 });
+
+// FlowRouter.notFound = {
+//   action() {
+//     this.render('App_body', 'App_notFound');
+//   },
+// };

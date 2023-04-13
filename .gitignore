@@ -1,1 +1,5 @@
 node_modules/
+.git
+.deploy
+.DS_Store
+private
