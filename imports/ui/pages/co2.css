@@ -7,6 +7,10 @@
 	cursor: pointer;
 }
 
+#credits{
+    transition: opacity 1s;
+}
+
 #titre{
     animation : showAndHideTitle 3s;
 }
@@ -36,30 +40,31 @@
 
 #house{
     mix-blend-mode: multiply;
-    animation : linear house 10s;
-    animation-fill-mode: forwards;  
-    animation-delay : 15s;
 }
 
 #trees{
     mix-blend-mode: multiply;
-    animation : linear house 10s;
-    animation-fill-mode: forwards;  
-    animation-delay : 5s;
 }
 
 #radar{
-    animation : linear house 10s;
-    animation-fill-mode: forwards;  
-    animation-delay : 8s;
+    transition: translateX 10s;
 }
 
 #bulle{
-    transition: opacity 1s;
+    transition: opacity .5s;
+}
+
+.car{
+    animation: moveIn 5s;
+    animation-fill-mode: forwards;  
 }
 
 .st99{
     mix-blend-mode: multiply;
+}
+
+#text{
+    margin-right:500px
 }
 
 @keyframes showAndHideTitle {
@@ -91,4 +96,13 @@
     1% { opacity: 1; }
     50% { opacity: 1; }
     100% {opacity : 0}
+}
+
+@keyframes moveIn{
+    0%, 50% {transform: translateX(200vw);}
+    100% {transform : translateX(0vw)}
+}
+
+@keyframes carOut{
+    100% {transform: translateX(200vw);}
 }

@@ -27,7 +27,7 @@ Template.co2SVG.onCreated(function(){
     // `)
 
     console.log(data)
-    counter = new ReactiveVar(0);
+    counter = new ReactiveVar(-1);
   })
 
 Template.co2SVG.onRendered(function(){
@@ -38,14 +38,6 @@ Template.co2SVG.onRendered(function(){
         document.getElementsByClassName("eventCatcher")[0].focus()
         document.getElementsByClassName("eventCatcher")[0].addEventListener("keyup", next)
       })
-
-    setTimeout(function(){
-        document.getElementById("flash").style.animation = "flash linear .5s"
-    },5000)
-
-    setTimeout(function(){
-        document.getElementById("bulle").style.opacity = "1"
-    },3000)
 })
 
 Template.co2SVG.helpers({
@@ -96,7 +88,7 @@ Template.co2SVG.helpers({
     
             // we want to check, at EVERY letter, if we need to wrap current word,
             // and reset counter AS SOON as a letter is over 100.
-            if (wrapCounter>=70) {
+            if (wrapCounter>=75) {
               // console.log(wrapCounter, words[z])
               // console.log("wrap at ", words[z])
               wrapCounter = 0
@@ -152,20 +144,74 @@ next = function(e){
       if (e.keyCode==32) {
       e.preventDefault();
 
+      document.getElementById("bulle").style.opacity = "1"
+
       
       index = counter.get()
       endOfText = data.length-1
-      
-      console.log("KEYPRESS ", index, endOfText, data)
 
+        // TIMED EVENTS
+
+        switch (index) {
+          case 8 :
+            document.getElementById("bulle").style.opacity = "0"
+            setTimeout(() => {
+              document.getElementById("trees").style.animation = "house linear 10s"  
+            }, 1000);
+            break;
+
+          case 13: 
+              setTimeout(()=>{
+                document.getElementById("house").style.animation = "house linear 10s"
+              },1000)
+            document.getElementById("bulle").style.opacity = "0"
+            break;
+
+          case 24 : 
+            setTimeout(() => {
+              document.getElementById("flash").style.animation = "flash linear .5s"
+            }, 2000);
+            break;
+
+          case 25:
+            document.getElementById("bulle").style.opacity = "0"
+            break;
+
+          case 26 : 
+          setTimeout(() => {
+
+            document.getElementById("radar").style.animation = "house linear 10s"
+          },1000)
+            break;
+        }
+
+      
+        //END CONDITION
+        
         if (index<endOfText) {
           // we want to increment the counter every time the spacebar
           // is pressed to get new dialog lines
           index = counter.set(index+1)
         }else{
-          // if we're at the end of the text, reset both peeps
-          // to crossed arms & fade to black.
+          // if we're at the end of the text, tell car to go away
+          // then fade out.
           console.log("END OF TEXT")
+
+          var el = document.getElementsByClassName("car")[0];
+          el.style.animation = 'carOut 20s';
+
+          document.getElementById("bulle").style.opacity = "0"
+
+          
+          setTimeout(() => {
+            document.getElementById("bg").style.transition = "opacity 5s"
+            document.getElementById("bg").style.opacity = "0"
+            setTimeout(() => {
+              console.log("bg should be dark, show credits")
+              document.getElementById("credits").style.opacity = "1"  
+            }, 1000)
+          }, 2000);
+
           return
         }
     }
