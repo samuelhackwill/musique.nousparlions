@@ -1,3 +1,16 @@
+.touchMarker {
+    position:absolute;
+    font-family:'ClearSans', sans-serif;
+    color:white;
+    font-size:xx-large;
+    transform: translate(25px, -25px);
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+    
+    transition: all 2s;
+}
+
 .eventCatcher {
 	position: fixed;
 	top: 0px;

@@ -34,9 +34,8 @@ Template.co2SVG.onRendered(function(){
     document.getElementById("titre").addEventListener("animationend", function(){
         console.log("title faded out, let's go bg")
         document.getElementById("bg").style.opacity = 1
-        document.getElementsByClassName("eventCatcher")[0].style.zIndex = "9"
-        document.getElementsByClassName("eventCatcher")[0].focus()
-        document.getElementsByClassName("eventCatcher")[0].addEventListener("keyup", next)
+        document.addEventListener("keyup", next)
+        document.addEventListener("touchstart", touchtouch)
       })
 })
 
@@ -139,10 +138,42 @@ Template.co2SVG.helpers({
     
 })
 
+touchtouch = function(e){
+  console.log(e.touches[0].screenX, e.touches[0].screenY)
+  const newDiv = document.createElement("div");
+  newDiv.innerHTML = "next!";  
+  newDiv.classList.add("touchMarker")
+  newDiv.style = "left:"+e.touches[0].screenX+"px;top:"+e.touches[0].screenY+"px;"
+  document.body.appendChild(newDiv);
+
+  newDiv.addEventListener("transitionend", killMarker)
+  
+  setTimeout(() => {
+    moveup(newDiv)
+  }, 100);
+  
+  }
+
+moveup = function(div){
+
+  console.log(div)
+
+  x = Math.floor(Math.random() * 150)
+  y = Math.floor(Math.random() * 200)
+
+  console.log("translate("+x+" px, -"+y+" px)")
+
+  div.style.transform = "translate("+x+"px, -"+y+"px)"
+  div.style.opacity = "0"
+  next()
+  }
+
+killMarker = function(e){
+  console.log("kill ", this)
+}
 
 next = function(e){
-      if (e.keyCode==32) {
-      e.preventDefault();
+      e?.preventDefault();
 
       document.getElementById("bulle").style.opacity = "1"
 
@@ -215,4 +246,3 @@ next = function(e){
           return
         }
     }
-  }
