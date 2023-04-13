@@ -1,0 +1,77 @@
+#titre{
+    animation : showAndHideTitle 3s;
+}
+
+#bg{
+    transition: opacity .5s;
+}
+
+#carbody{
+    animation : infinite steps(1) carcasse 1.5s;
+    animation-delay : .3s;
+}
+
+#wheels{
+    animation : infinite steps(1) wheeels .5s;
+    animation-direction: reverse;
+}
+
+#samuel{
+    animation : infinite steps(1) carcasse 1.5s;
+}
+
+#dentelles{
+    animation : ease-out dentelles 120s;
+    animation-fill-mode: forwards;  
+}
+
+#house{
+    mix-blend-mode: multiply;
+    animation : linear house 10s;
+    animation-fill-mode: forwards;  
+    animation-delay : 15s;
+}
+
+#trees{
+    mix-blend-mode: multiply;
+    animation : linear house 10s;
+    animation-fill-mode: forwards;  
+    animation-delay : 5s;
+}
+
+#radar{
+    mix-blend-mode: multiply;
+    animation : linear house 10s;
+    animation-fill-mode: forwards;  
+    animation-delay : 8s;
+}
+
+@keyframes showAndHideTitle {
+    0% {opacity : 0}
+    15% {opacity : 1}
+    85% {opacity : 1}
+    100% {opacity: 0;}
+}
+
+@keyframes carcasse {
+    0%, 100% {transform : translateY(0vh)}
+    50% {transform : translateY(-1vh)}
+}
+
+@keyframes dentelles {
+    100% {transform:translateX(100vw)}
+}
+
+@keyframes wheeels {
+    0%, 100% {transform: translateY(0vh)}
+    50% {transform: translateY(-2vh)}
+} 
+
+@keyframes house {
+    100% {transform: translateX(300vw)}
+} 
+
+@keyframes flash {
+    0, 100% { opacity: 0; }
+    50% { opacity: 1; }
+}
