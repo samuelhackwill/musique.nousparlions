@@ -1,3 +1,12 @@
+.eventCatcher {
+	position: fixed;
+	top: 0px;
+	width: 100vw;
+	height: 100vh;
+	opacity: 0;
+	cursor: pointer;
+}
+
 #titre{
     animation : showAndHideTitle 3s;
 }
@@ -40,10 +49,17 @@
 }
 
 #radar{
-    mix-blend-mode: multiply;
     animation : linear house 10s;
     animation-fill-mode: forwards;  
     animation-delay : 8s;
+}
+
+#bulle{
+    transition: opacity 1s;
+}
+
+.st99{
+    mix-blend-mode: multiply;
 }
 
 @keyframes showAndHideTitle {
@@ -72,6 +88,7 @@
 } 
 
 @keyframes flash {
-    0, 100% { opacity: 0; }
+    1% { opacity: 1; }
     50% { opacity: 1; }
+    100% {opacity : 0}
 }

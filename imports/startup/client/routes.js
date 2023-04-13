@@ -14,6 +14,6 @@ FlowRouter.route("/home", {
 FlowRouter.route("/co2", {
   name: "co2",
   action(){
-    BlazeLayout.render("co2");
+    BlazeLayout.render("co2SVG");
   }
 });
