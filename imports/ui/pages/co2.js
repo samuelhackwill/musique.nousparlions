@@ -37,6 +37,16 @@ Template.co2SVG.onRendered(function(){
         document.addEventListener("keyup", next)
         document.addEventListener("touchstart", touchtouch)
       })
+
+      nudge = setTimeout(() => {
+        document.getElementById("instruct").style.opacity="1"
+      }, 15000);
+
+      document.body.scrollIntoView({
+        behavior: 'auto',
+        block: 'center',
+        inline: 'center'
+    });
 })
 
 Template.co2SVG.helpers({
@@ -141,7 +151,8 @@ Template.co2SVG.helpers({
 touchtouch = function(e){
   console.log(e.touches[0].screenX, e.touches[0].screenY)
   const newDiv = document.createElement("div");
-  newDiv.innerHTML = "next!";  
+  bruits = ["tip!", "tap!", "toup!"]
+  newDiv.innerHTML = bruits[Math.floor(Math.random() * bruits.length)]
   newDiv.classList.add("touchMarker")
   newDiv.style = "left:"+e.touches[0].screenX+"px;top:"+e.touches[0].screenY+"px;"
   document.body.appendChild(newDiv);
@@ -174,6 +185,16 @@ killMarker = function(e){
 
 next = function(e){
       e?.preventDefault();
+
+      document.getElementById("instruct").style.opacity = "0"
+
+      if(nudge){
+        clearTimeout(nudge)
+      }
+
+      nudge = setTimeout(() => {
+        document.getElementById("instruct").style.opacity="1"
+      }, 15000);
 
       document.getElementById("bulle").style.opacity = "1"
 
@@ -227,6 +248,11 @@ next = function(e){
           // if we're at the end of the text, tell car to go away
           // then fade out.
           console.log("END OF TEXT")
+
+
+          if(nudge){
+            clearTimeout(nudge)
+          }
 
           var el = document.getElementsByClassName("car")[0];
           el.style.animation = 'carOut 20s';

@@ -1,3 +1,8 @@
+@font-face {
+    font-family: ClearSans;
+    src: url('/fonts/ClearSans-Regular.woff') format('woff');  
+}   
+
 .touchMarker {
     position:absolute;
     font-family:'ClearSans', sans-serif;
@@ -11,13 +16,39 @@
     transition: all 2s;
 }
 
-.eventCatcher {
-	position: fixed;
-	top: 0px;
-	width: 100vw;
-	height: 100vh;
-	opacity: 0;
-	cursor: pointer;
+.opacityzero{
+    opacity: 0;
+}
+
+html{
+    background-color: black;
+}
+
+#fond{
+    height: 100vh !important;
+}
+
+svg{
+    padding: none;
+    margin: none;
+    top:0px;
+    left: 0px;
+    position: absolute;
+    width: 100%;
+}
+
+
+.hidden{
+    opacity : 0;
+    transition: opacity 1s;
+}
+
+#touchhand{
+    animation: fastTouch linear infinite .3s;
+}
+
+#presshand{
+    animation: slowTouch linear infinite .6s;
 }
 
 #credits{
@@ -113,9 +144,19 @@
 
 @keyframes moveIn{
     0%, 50% {transform: translateX(200vw);}
-    100% {transform : translateX(0vw)}
+    100% {transform : translateX(0vw);}
 }
 
 @keyframes carOut{
     100% {transform: translateX(200vw);}
+}
+
+@keyframes fastTouch{
+    0, 100%{transform: translateY(0vh);}
+    50%{transform:translateY(2vh);}
+}
+
+@keyframes slowTouch {
+    0%, 25%, 75%, 100%{transform: translateY(0vh);}
+    50%{transform:translateY(2vh);}
 }
