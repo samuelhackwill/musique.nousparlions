@@ -1,3 +1,8 @@
+@font-face {
+    font-family: UbuntuMono-R;
+    src: url('/fonts/UbuntuMono-R.ttf') format('truetype');
+}
+
 #chatbot-titre{
     animation : chatbot-showAndHideTitle 4s forwards;
 }
@@ -17,6 +22,12 @@
 #maes{
     transition: all 1s;
     opacity :0;
+}
+
+#chatbot-credits{
+    display:inline;
+    opacity: 0;
+    transition: opacity 2s;
 }
 
 #instruct{
@@ -48,9 +59,28 @@
     opacity:0;
     display:inline;
 }
+/* 
+#handright{
+    animation: chatbot-typing .5s infinite steps(2);
+}
+
+#handleft{
+    animation: chatbot-typing .5s infinite steps(2) reverse;
+} */
 
 @keyframes chatbot-showBg {
     0% {opacity : 0}
     70% {opacity: 0}
     100% {opacity : 1}
+}
+
+@keyframes chatbot-typing{
+    0%, 100% {transform:translateY(1vh);}
+    50% {transform:translateX(0px);}
+}
+
+#chatbot-bubblestef, #chatbot-bubblestefSmall, #chatbot-bubblesam, #chatbot-bubblesamSmall, #chatbot-bubblecomputer, #chatbot-bubblecomputerBig {
+    display:inline;
+    opacity:0;
+    transition: opacity .5s;
 }

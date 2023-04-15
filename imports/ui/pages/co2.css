@@ -3,6 +3,11 @@
     src: url('/fonts/ClearSans-Regular.woff') format('woff');  
 }   
 
+@font-face {
+    font-family: UbuntuMono-R;
+    src: url('/fonts/UbuntuMono-R.ttf') format('truetype');
+}
+
 .touchMarker {
     position:absolute;
     font-family:'ClearSans', sans-serif;

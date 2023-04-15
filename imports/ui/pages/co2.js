@@ -23,9 +23,6 @@ Template.co2SVG.onCreated(function(){
     // dentelles
     // bg 
 
-    // editing in the SVG should NEVER be adding classes! do it with javascript instead onRendered. Only edit the SVG to rename classes with wierd numbers. Thank you.
-    // `)
-
     console.log(data)
     counter = new ReactiveVar(-1);
   })
