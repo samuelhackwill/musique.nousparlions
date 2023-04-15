@@ -1,17 +1,17 @@
-#titre{
-    animation : showAndHideTitle2 4s forwards;
+#chatbot-titre{
+    animation : chatbot-showAndHideTitle 4s forwards;
 }
 
-@keyframes showAndHideTitle2 {
+@keyframes chatbot-showAndHideTitle {
     0% {opacity : 0}
     15% {opacity : 1}
     85% {opacity : 1}
     100% {opacity: 0}
 }
 
-#bg{
+#chatbot-bg{
     display:inline;
-    animation: showBg 3s;
+    animation: chatbot-showBg 3s;
 }
 
 #maes{
@@ -25,31 +25,31 @@
     transition: all 1s;
 }
 
-#sam{
+#chatbot-sam{
     transition: all 1s;
     opacity:0;
     display: inline;
 }
 
-#sam2{
+#chatbot-sam2{
     opacity:0;
 }
 
-#stef1{
+#chatbot-stef1{
     opacity:0;
 }
 
-#stef3{
+#chatbot-stef3{
     opacity:0;
 }
 
-#stef{
+#chatbot-stef{
     transition: all 1s;
     opacity:0;
     display:inline;
 }
 
-@keyframes showBg {
+@keyframes chatbot-showBg {
     0% {opacity : 0}
     70% {opacity: 0}
     100% {opacity : 1}
