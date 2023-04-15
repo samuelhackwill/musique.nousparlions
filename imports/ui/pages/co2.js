@@ -31,9 +31,11 @@ Template.co2SVG.onCreated(function(){
   })
 
 Template.co2SVG.onRendered(function(){
-    document.getElementById("titre").addEventListener("animationend", function(){
+  document.body.style.backgroundColor = "blue"
+  
+    document.getElementById("co2-titre").addEventListener("animationend", function(){
         console.log("title faded out, let's go bg")
-        document.getElementById("bg").style.opacity = 1
+        document.getElementById("co2-bg").style.opacity = 1
         document.addEventListener("keyup", next)
         document.addEventListener("touchstart", touchtouch)
       })
@@ -183,6 +185,11 @@ killMarker = function(e){
   console.log("kill ", this)
 }
 
+destroyAnimatedStuff = function(){
+  document.getElementById("instruct").innerHTML = ""
+  document.getElementById("co2-bg").innerHTML = ""
+}
+
 next = function(e){
       e?.preventDefault();
 
@@ -196,7 +203,7 @@ next = function(e){
         document.getElementById("instruct").style.opacity="1"
       }, 15000);
 
-      document.getElementById("bulle").style.opacity = "1"
+      document.getElementById("co2-bulle").style.opacity = "1"
 
       
       index = counter.get()
@@ -206,7 +213,7 @@ next = function(e){
 
         switch (index) {
           case 8 :
-            document.getElementById("bulle").style.opacity = "0"
+            document.getElementById("co2-bulle").style.opacity = "0"
             setTimeout(() => {
               document.getElementById("trees").style.animation = "house linear 10s"  
             }, 1000);
@@ -216,7 +223,7 @@ next = function(e){
               setTimeout(()=>{
                 document.getElementById("house").style.animation = "house linear 10s"
               },1000)
-            document.getElementById("bulle").style.opacity = "0"
+            document.getElementById("co2-bulle").style.opacity = "0"
             break;
 
           case 24 : 
@@ -226,7 +233,7 @@ next = function(e){
             break;
 
           case 25:
-            document.getElementById("bulle").style.opacity = "0"
+            document.getElementById("co2-bulle").style.opacity = "0"
             break;
 
           case 26 : 
@@ -249,6 +256,9 @@ next = function(e){
           // then fade out.
           console.log("END OF TEXT")
 
+          document.removeEventListener("keyup", next)
+          document.removeEventListener("touchstart", touchtouch)
+
 
           if(nudge){
             clearTimeout(nudge)
@@ -257,15 +267,18 @@ next = function(e){
           var el = document.getElementsByClassName("car")[0];
           el.style.animation = 'carOut 20s';
 
-          document.getElementById("bulle").style.opacity = "0"
+          document.getElementById("co2-bulle").style.opacity = "0"
 
           
           setTimeout(() => {
-            document.getElementById("bg").style.transition = "opacity 5s"
-            document.getElementById("bg").style.opacity = "0"
+            bg = document.getElementById("co2-bg")
+            bg.style.transition = "opacity 5s"
+            bg.style.opacity = "0"
+            bg.addEventListener("transitionend", destroyAnimatedStuff)
             setTimeout(() => {
               console.log("bg should be dark, show credits")
-              document.getElementById("credits").style.opacity = "1"  
+              credits = document.getElementById("co2-credits")
+              credits.style.opacity = "1"  
             }, 1000)
           }, 2000);
 

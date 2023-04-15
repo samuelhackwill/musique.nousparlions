@@ -20,10 +20,6 @@
     opacity: 0;
 }
 
-html{
-    background-color: black;
-}
-
 #fond{
     height: 100vh !important;
 }
@@ -51,15 +47,15 @@ svg{
     animation: slowTouch linear infinite .6s;
 }
 
-#credits{
+#co2-credits{
     transition: opacity 1s;
 }
 
-#titre{
+#co2-titre{
     animation : showAndHideTitle 3s;
 }
 
-#bg{
+#co2-bg{
     transition: opacity .5s;
 }
 
@@ -73,7 +69,7 @@ svg{
     animation-direction: reverse;
 }
 
-#samuel{
+#co2-samuel{
     animation : infinite steps(1) carcasse 1.5s;
 }
 
