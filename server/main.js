@@ -12,9 +12,9 @@ const serverRendering = (req, res, next) =>
 	timestamp = new Date()
 	// page = req.url
 	// console.log("serverRendering launching ", req.headers['user-agent'])
-	console.log(timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds())
+	// console.log(timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds())
 	// console.log("full REQ ", req)
-	console.log("REQ url ", req.url)
+	// console.log("REQ url ", req.url)
 	
 	// console.log("which page svp? ", page)
 	// i guess i can get the URL this way?
@@ -26,17 +26,17 @@ const serverRendering = (req, res, next) =>
 	    {
 
 			if(req.url!=="/"){
-				console.log("not accessing root")
+				// console.log("not accessing root")
 				path = req.url
-				console.log("page req url : ", path, " and substr : ", path.substring(1))
+				// console.log("page req url : ", path, " and substr : ", path.substring(1))
 				titre = path.substring(1)
 			}else{
 				// show page 1 preview for root
-				console.log("accessing root!")
+				// console.log("accessing root!")
 				titre = "Discussions"
 			}
 
-			console.log("THATS A BOT, user agent : ", ua)
+			// console.log("THATS A BOT, user agent : ", ua)
 	      // Send any non matches forward
 	      // if (!pathName.includes('/')) 
 	      // {
@@ -92,11 +92,11 @@ const serverRendering = (req, res, next) =>
 		      res.end(html);
 	  	  // }
 	    } else {
-	      console.log("not a bot, carry on")
+	    //   console.log("not a bot, carry on")
 	      next();
 	    }
 	} catch (err) {
-    console.log(err);
+    // console.log(err);
   }
 }
 

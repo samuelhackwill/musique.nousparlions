@@ -3,12 +3,12 @@ import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 import '../../ui/pages/co2.js';
 import '../../ui/pages/chatbot.js';
+import '../../ui/pages/bravo.js';
 import '../../ui/pages/home.js';
 
 FlowRouter.route('/co2', {
   name: 'co2',
   action() {
-    console.log(this)
     this.render('co2SVG');
   },
 });
@@ -17,6 +17,13 @@ FlowRouter.route('/chatbot', {
   name: 'chatbot',
   action() {
     this.render('chatbotSVG');
+  },
+});
+
+FlowRouter.route('/bravo', {
+  name: 'bravo',
+  action() {
+    this.render('bravoSVG');
   },
 });
 
