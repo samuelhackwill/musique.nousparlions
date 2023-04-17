@@ -61,6 +61,10 @@ Template.chatbotSVG.helpers({
             wrapMax = 63
         }
 
+        if (getBubble == 3) {
+            wrapMax = 90
+        }
+
         wrapCurrentWord = false
         wrapCounter = 0
         lineCounter = 1
@@ -146,7 +150,7 @@ Template.chatbotSVG.helpers({
 })
 
 
-touchtouch = function(e){
+const touchtouch = function(e){
   console.log(e.touches[0].screenX, e.touches[0].screenY)
   const newDiv = document.createElement("div");
   bruits = ["tip!", "tap!", "toup!"]
@@ -163,7 +167,7 @@ touchtouch = function(e){
   
   }
 
-moveup = function(div){
+const moveup = function(div){
 
   console.log(div)
 
@@ -186,7 +190,7 @@ destroyAnimatedStuff = function(){
   document.getElementById("chatbot-bg").innerHTML = ""
 }
 
-next = function(e){
+const next = function(e){
       e?.preventDefault();
 
       document.getElementById("instruct").style.opacity = "0"
@@ -316,7 +320,7 @@ next = function(e){
               document.getElementById("chatbot-stef3").style.opacity = "1"
             break;      
 
-            case 37 :
+            case 36 :
               setTimeout(() => {
               document.getElementById("chatbot-stef3").style.opacity = "0"
               document.getElementById("chatbot-stef1").style.opacity = "1"

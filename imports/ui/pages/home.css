@@ -1,0 +1,23 @@
+.homeDiv{
+    margin: 5vw;
+    font-family: ClearSans;
+    color:white;
+    max-width: 50vw;
+}
+
+li{
+    font-size: xx-large;
+}
+
+a{
+    font-style: italic;
+    color:red;
+}
+
+a:visited{
+    color:grey;
+}
+
+span{
+    font-style: italic;
+}

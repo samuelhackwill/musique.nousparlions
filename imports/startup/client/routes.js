@@ -3,6 +3,7 @@ import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
 import '../../ui/pages/co2.js';
 import '../../ui/pages/chatbot.js';
+import '../../ui/pages/home.js';
 
 FlowRouter.route('/co2', {
   name: 'co2',
@@ -17,6 +18,13 @@ FlowRouter.route('/chatbot', {
   action() {
     this.render('chatbotSVG');
   },
+});
+
+FlowRouter.route('/', {
+  name: 'home',
+  action() {
+    this.render('home')
+  }
 });
 
 // FlowRouter.notFound = {

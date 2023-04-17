@@ -147,7 +147,7 @@ Template.co2SVG.helpers({
     
 })
 
-touchtouch = function(e){
+const touchtouch = function(e){
   console.log(e.touches[0].screenX, e.touches[0].screenY)
   const newDiv = document.createElement("div");
   bruits = ["tip!", "tap!", "toup!"]
@@ -164,7 +164,7 @@ touchtouch = function(e){
   
   }
 
-moveup = function(div){
+const moveup = function(div){
 
   console.log(div)
 
@@ -178,16 +178,16 @@ moveup = function(div){
   next()
   }
 
-killMarker = function(e){
+const killMarker = function(e){
   console.log("kill ", this)
 }
 
-destroyAnimatedStuff = function(){
+const destroyAnimatedStuff = function(){
   document.getElementById("instruct").innerHTML = ""
   document.getElementById("co2-bg").innerHTML = ""
 }
 
-next = function(e){
+const next = function(e){
       e?.preventDefault();
 
       document.getElementById("instruct").style.opacity = "0"
