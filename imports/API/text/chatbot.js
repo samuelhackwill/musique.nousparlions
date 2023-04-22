@@ -45,7 +45,7 @@ export const data = [
 {player:1,text:"parce qu'il n'y avait pas de bornes de validation sur le quai et..."},
 {player:2,text:"je veux retourner dans le ventre de ma mère"},
 {player:99,text:""},
-{player:2,text:"ça va je rigole"},
+{player:2,text:"avec toi bien sûr!"},
 {player:3,text:"bon ben voilà chacun son truc"},
 {player:3,text:"moi c'est les maths."}
 ]

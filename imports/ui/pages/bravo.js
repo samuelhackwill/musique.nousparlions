@@ -15,8 +15,6 @@ Template.bravoSVG.onRendered(function(){
 
     document.getElementById("bravo-titre").addEventListener("animationend", function(){
         document.body.style.transition = "all 1s"
-        // when title fades out, we want to first show piano, then the rest.
-        // document.body.style.backgroundColor = "rgb(255,60,0)"
 
         document.getElementById("seats").style.opacity = 1
         document.getElementById("pasapplaudit").style.opacity = 1
@@ -25,7 +23,7 @@ Template.bravoSVG.onRendered(function(){
         document.getElementById("nuitAmericaine").style.opacity = 1
 
         document.addEventListener("keyup", next)
-        // document.addEventListener("touchstart", touchtouch)
+        document.addEventListener("touchstart", touchtouch)
 
         setTimeout(() => {
             document.getElementById("nuitAmericaine").style.opacity = 0
@@ -201,91 +199,91 @@ const next = function(e){
     
       // TIMED EVENTS
 
-    //   switch (index) {
-    //     case -1 :
-    //       document.getElementById("chatbot-stef2").style.opacity = "0"
-    //       document.getElementById("chatbot-stef1").style.opacity = "1"
-    //       break;
+      // switch (index) {
+      //   case -1 :
+      //     document.getElementById("chatbot-stef2").style.opacity = "0"
+      //     document.getElementById("chatbot-stef1").style.opacity = "1"
+      //     break;
 
-    //     case 0 :
-    //       document.getElementById("chatbot-stef2").style.opacity = "1"
-    //       document.getElementById("chatbot-stef1").style.opacity = "0"
-    //       document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-    //       document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-    //       break;
+      //   case 0 :
+      //     document.getElementById("chatbot-stef2").style.opacity = "1"
+      //     document.getElementById("chatbot-stef1").style.opacity = "0"
+      //     document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
+      //     document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
+      //     break;
 
-    //     case 2 :
-    //       setTimeout(() => {
-    //         document.getElementById("handright").style.animation = ""
-    //         document.getElementById("handleft").style.animation = ""
-    //         },2000)  
-    //     break;
+      //   case 2 :
+      //     setTimeout(() => {
+      //       document.getElementById("handright").style.animation = ""
+      //       document.getElementById("handleft").style.animation = ""
+      //       },2000)  
+      //   break;
 
-    //     case 3 :
-    //       setTimeout(() => {
-    //         document.getElementById("chatbot-stef2").style.opacity = "0"
-    //         document.getElementById("chatbot-stef3").style.opacity = "1"
-    //         }, 2000);
-    //       break;
+      //   case 3 :
+      //     setTimeout(() => {
+      //       document.getElementById("chatbot-stef2").style.opacity = "0"
+      //       document.getElementById("chatbot-stef3").style.opacity = "1"
+      //       }, 2000);
+      //     break;
 
-    //     case 6 :
-    //       document.getElementById("chatbot-sam1").style.opacity = "0"
-    //       document.getElementById("chatbot-sam2").style.opacity = "1"
-    //       setTimeout(() => {
-    //         document.getElementById("chatbot-stef2").style.opacity = "1"
-    //         document.getElementById("chatbot-stef3").style.opacity = "0"
-    //         }, 1000);
-    //       break;
+      //   case 6 :
+      //     document.getElementById("chatbot-sam1").style.opacity = "0"
+      //     document.getElementById("chatbot-sam2").style.opacity = "1"
+      //     setTimeout(() => {
+      //       document.getElementById("chatbot-stef2").style.opacity = "1"
+      //       document.getElementById("chatbot-stef3").style.opacity = "0"
+      //       }, 1000);
+      //     break;
 
-    //       case 7 : 
-    //       document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-    //       document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-    //       break;
+      //     case 7 : 
+      //     document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
+      //     document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
+      //     break;
 
-    //       case 8 :
-    //         setTimeout(() => {
-    //           document.getElementById("handright").style.animation = ""
-    //           document.getElementById("handleft").style.animation = ""
-    //           },2000)    
-    //       break;
+      //     case 8 :
+      //       setTimeout(() => {
+      //         document.getElementById("handright").style.animation = ""
+      //         document.getElementById("handleft").style.animation = ""
+      //         },2000)    
+      //     break;
 
-    //       case 14 :
-    //         setTimeout(() => {
-    //           document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-    //           document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-    //           },1000)    
-    //       break;
+      //     case 14 :
+      //       setTimeout(() => {
+      //         document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
+      //         document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
+      //         },1000)    
+      //     break;
 
-    //       case 15 :
-    //         setTimeout(() => {
-    //           document.getElementById("handright").style.animation = ""
-    //           document.getElementById("handleft").style.animation = ""
-    //           },1000)    
-    //       break;
+      //     case 15 :
+      //       setTimeout(() => {
+      //         document.getElementById("handright").style.animation = ""
+      //         document.getElementById("handleft").style.animation = ""
+      //         },1000)    
+      //     break;
 
-    //       case 16 :
-    //         document.getElementById("chatbot-stef2").style.opacity = "0"
-    //         document.getElementById("chatbot-stef3").style.opacity = "1"
-    //       break;      
+      //     case 16 :
+      //       document.getElementById("chatbot-stef2").style.opacity = "0"
+      //       document.getElementById("chatbot-stef3").style.opacity = "1"
+      //     break;      
 
-    //       case 36 :
-    //         setTimeout(() => {
-    //         document.getElementById("chatbot-stef3").style.opacity = "0"
-    //         document.getElementById("chatbot-stef1").style.opacity = "1"
-    //         eraseHand = document.getElementsByClassName("risenHand")
-    //         for (let x = 0; x < eraseHand.length; x++) {
-    //           eraseHand[x].style.display="none"
-    //         }
-    //         },2000)
-    //       break;      
+      //     case 36 :
+      //       setTimeout(() => {
+      //       document.getElementById("chatbot-stef3").style.opacity = "0"
+      //       document.getElementById("chatbot-stef1").style.opacity = "1"
+      //       eraseHand = document.getElementsByClassName("risenHand")
+      //       for (let x = 0; x < eraseHand.length; x++) {
+      //         eraseHand[x].style.display="none"
+      //       }
+      //       },2000)
+      //     break;      
 
-    //       case 38 :
-    //         document.getElementById("chatbot-sam2").style.opacity = "0"
-    //         document.getElementById("chatbot-sam1").style.opacity = "1"
-    //       break;
+      //     case 38 :
+      //       document.getElementById("chatbot-sam2").style.opacity = "0"
+      //       document.getElementById("chatbot-sam1").style.opacity = "1"
+      //     break;
     
 
-    //    }
+      //  }
 
     
       //END CONDITION
@@ -301,24 +299,27 @@ const next = function(e){
 
         document.removeEventListener("keyup", next)
         document.removeEventListener("touchstart", touchtouch)
-
-
+        document.getElementById("bravo-text").style.opacity="0"
+        
         if(nudge){
           clearTimeout(nudge)
         }
 
         
-        //   bg = document.getElementById("chatbot-bg")
-        //   sam = document.getElementById("chatbot-sam")
-        //   stef = document.getElementById("chatbot-stef")
-        //   bg.style.transition = "opacity 5s"
-        //   bg.style.opacity = "0"
-        //   sam.style.transition = "opacity 5s"
-        //   sam.style.opacity = "0"
-        //   stef.style.transition = "opacity 5s"
-        //   stef.style.opacity = "0"
+        seats = document.getElementById("seats")
+        bob = document.getElementById("pasapplaudit")
+        bobet = document.getElementById("petitapplaudit")
+        hands = document.getElementById("public")
+        seats.style.transition = "opacity 5s"
+        seats.style.opacity = "0"
+        bob.style.transition = "opacity 5s"
+        bob.style.opacity = "0"
+        bobet.style.transition = "opacity 5s"
+        bobet.style.opacity = "0"
+        hands.style.transition = "opacity 5s"
+        hands.style.opacity = "0"
 
-          bg.addEventListener("transitionend", destroyAnimatedStuff)
+          seats.addEventListener("transitionend", destroyAnimatedStuff)
           
           setTimeout(() => {
             console.log("bg should be dark, show credits")
@@ -330,3 +331,45 @@ const next = function(e){
       }
       lastPlayer = player
   }
+
+const touchtouch = function(e){
+  console.log(e.touches[0].screenX, e.touches[0].screenY)
+  const newDiv = document.createElement("div");
+  bruits = ["tip!", "tap!", "toup!"]
+  newDiv.innerHTML = bruits[Math.floor(Math.random() * bruits.length)]
+  newDiv.classList.add("touchMarker")
+  newDiv.style = "left:"+e.touches[0].screenX+"px;top:"+e.touches[0].screenY+"px;"
+  document.body.appendChild(newDiv);
+
+  newDiv.addEventListener("transitionend", killMarker)
+  
+  setTimeout(() => {
+    moveup(newDiv)
+  }, 100);
+  
+  }
+
+
+const moveup = function(div){
+
+  console.log(div)
+
+  x = Math.floor(Math.random() * 150)
+  y = Math.floor(Math.random() * 200)
+
+  console.log("translate("+x+" px, -"+y+" px)")
+
+  div.style.transform = "translate("+x+"px, -"+y+"px)"
+  div.style.opacity = "0"
+  next()
+  }
+
+killMarker = function(e){
+  console.log("kill ", this)
+}
+
+destroyAnimatedStuff = function(){
+  document.getElementById("instruct").innerHTML = ""
+  document.getElementById("public").innerHTML = ""
+  document.getElementById("petitapplaudit").innerHTML = ""
+}

@@ -34,8 +34,12 @@ export const data = [
 {player:2,text:"Aux saluts tu vois du coin de l'oeil une personne qui t'applaudit avec une chaleur toute particulière."},
 {player:2,text:"tu décides de suivre cette personne pour voir qui d'autre elle applaudit dans sa vie"},
 {player:2,text:"et là c'est une catastrophe "},
-{player:2,text:"tu vois cette personne applaudir tout et n'importe quoi :"},
-{player:2,text:"une émission à la télé, un plat de cuisine soi-disant fait maison, etc."},
+{player:2,text:"tu vois cette personne applaudir non seulement des artistes que tu méprises à d'autres concerts"},
+{player:2,text:"mais encore pire tu la vois applaudir dans des situations absurdes"},
+{player:2,text:"par exemple : une personne qui souffle des bougies à son anniversaire"},
+{player:2,text:"(alors que c'est facile)"},
+{player:2,text:"ou alors, après l'atterissage dans un avion"},
+{player:2,text:"(alors que dans 99% des cas c'est le pilote automatique qui fait tout)"},
 {player:2,text:"autant dire que la confiance est brisée."},
 {player:99,text:"(…)"},
 {player:1,text:"	moi je pense que même si on a pas super aimé il faut quand même applaudir"},
@@ -62,7 +66,5 @@ export const data = [
 {player:1,text:"	MERCI AUX CYANOBACTÉRIES D'AVOIR PRODUIT L'OXYGÈNE DE L'ATHMOSPHÈRE IL Y A DEUX MILLIARD D'ANNÉES!"},
 {player:99,text:"	(…)"},
 {player:1,text:"	MERCI À MA MAMAN!"},
-{player:99,text:"	(…)"},
-{player:1,text:"	MERCI À L'ONDA ET AU DISPOSITIF ÉCRAN VIVANT!"},
-{player:1,text:"* sur une idée originale de stéphanie & jérome."}
+{player:1,text:"	MERCI À MA MAMIE!"}
 ]
