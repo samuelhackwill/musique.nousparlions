@@ -1,0 +1,19 @@
+svg{
+    padding: none;
+    margin: none;
+    top:0px;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    height: 100%;
+}
+
+@font-face {
+    font-family: ClearSans;
+    src: url('/fonts/ClearSans-Regular.woff') format('woff');  
+}   
+
+@font-face {
+    font-family: UbuntuMono-R;
+    src: url('/fonts/UbuntuMono-R.ttf') format('truetype');
+}

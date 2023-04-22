@@ -59,8 +59,10 @@ export const data = [
 {player:99,text:"	(…)"},
 {player:1,text:"	MERCI AUSSI AUX PERSONNES QUI ONT CONSTRUIT LE BATIMENT"},
 {player:99,text:"	(…)"},
-{player:1,text:"	PARDON POUR MON AMI"},
-{player:1,text:"	IL EST UN PEU DÉSAGRÉABLE MAIS IL A BON FOND"},
-{player:1,text:"	VOILA BONNE SOIREE"},
+{player:1,text:"	MERCI AUX CYANOBACTÉRIES D'AVOIR PRODUIT L'OXYGÈNE DE L'ATHMOSPHÈRE IL Y A DEUX MILLIARD D'ANNÉES!"},
+{player:99,text:"	(…)"},
+{player:1,text:"	MERCI À MA MAMAN!"},
+{player:99,text:"	(…)"},
+{player:1,text:"	MERCI À L'ONDA ET AU DISPOSITIF ÉCRAN VIVANT!"},
 {player:1,text:"* sur une idée originale de stéphanie & jérome."}
 ]

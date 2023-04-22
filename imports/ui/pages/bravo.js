@@ -28,7 +28,7 @@ Template.bravoSVG.onRendered(function(){
         // document.addEventListener("touchstart", touchtouch)
 
         setTimeout(() => {
-            document.body.style.transition = "all 1s;"
+            document.getElementById("nuitAmericaine").style.opacity = 0
         }, 2000);
       })
 
@@ -47,7 +47,7 @@ Template.bravoSVG.helpers({
 	wrapLine(arg){
         // this function's goal is to retrieve text and to split it in
         // one to six lines. One very long word breaks the wrapping.
-        wrapMax = 85
+        wrapMax = 75
 
 
         index = counter.get();
@@ -61,7 +61,7 @@ Template.bravoSVG.helpers({
 
 
         // if (getBubble == 2) {
-        //     wrapMax = 63
+        //     wrapMax = 75
         // }
 
         // if (getBubble == 3) {
@@ -174,7 +174,7 @@ const next = function(e){
 
     player = data[_index]?.player
 
-    console.log(lastPlayer, player, index)
+    // console.log(lastPlayer, player, index)
 
     // yeah if it's a new player AND we're not at the very first line of text,
     // we want to hide the previous speech bubble! well, make it ALL speech dialogs fu

@@ -1,11 +1,5 @@
-@font-face {
-    font-family: ClearSans;
-    src: url('/fonts/ClearSans-Regular.woff') format('woff');  
-}   
-
-@font-face {
-    font-family: UbuntuMono-R;
-    src: url('/fonts/UbuntuMono-R.ttf') format('truetype');
+.co2-svg{
+    width: 100%!important;
 }
 
 .touchMarker {
@@ -28,16 +22,6 @@
 #fond{
     height: 100vh !important;
 }
-
-svg{
-    padding: none;
-    margin: none;
-    top:0px;
-    left: 0px;
-    position: absolute;
-    width: 100%;
-}
-
 
 .hidden{
     opacity : 0;
