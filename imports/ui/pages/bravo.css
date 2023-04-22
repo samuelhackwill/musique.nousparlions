@@ -67,6 +67,14 @@
     animation : clapGauche 1.5s infinite steps(1) reverse;
 }
 
+#bravo-P1-2-mainDroite{
+    animation : clapDroite 1.5s infinite steps(1);
+}
+
+#bravo-P1-2-mainGauche{
+    animation : clapGauche 1.5s infinite steps(1) reverse;
+}
+
 #phylacteres{
     opacity: 1;
     display: inline;

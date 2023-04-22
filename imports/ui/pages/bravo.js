@@ -25,13 +25,13 @@ Template.bravoSVG.onRendered(function(){
         document.addEventListener("keyup", next)
         document.addEventListener("touchstart", touchtouch)
 
-        setTimeout(() => {
-            document.getElementById("nuitAmericaine").style.opacity = 0
-        }, 2000);
+        // setTimeout(() => {
+        //     document.getElementById("nuitAmericaine").style.opacity = 0
+        // }, 2000);
       })
 
       nudge = setTimeout(() => {
-        document.getElementById("instruct").style.opacity=".2"
+        document.getElementById("instruct").style.opacity="1"
       }, 15000);
 
       document.body.scrollIntoView({
@@ -150,8 +150,6 @@ Template.bravoSVG.helpers({
       },
 })
 
-
-
 const next = function(e){
     e?.preventDefault();
 
@@ -199,91 +197,35 @@ const next = function(e){
     
       // TIMED EVENTS
 
-      // switch (index) {
-      //   case -1 :
-      //     document.getElementById("chatbot-stef2").style.opacity = "0"
-      //     document.getElementById("chatbot-stef1").style.opacity = "1"
-      //     break;
+      // P1-1 : applaudit face 
+      // P1-2 : applaudit tournée
+      // P1-3 : applaudit colère
+      // P1-4 : hurle 
+      // P1-5 : applaudit pleure
 
-      //   case 0 :
-      //     document.getElementById("chatbot-stef2").style.opacity = "1"
-      //     document.getElementById("chatbot-stef1").style.opacity = "0"
-      //     document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-      //     document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-      //     break;
+      // P2-1 : dort 
+      // P2-2 : shrug
+      // P2-3 : bras croises
+      // P2-4 : se redresse... 
+      // P2-5 : doigt sous le nez
+      // P2-6 : pointe du doigt
+      // P2-7 : imam
+      // P2-8 : part 1
+      // P2-9 : part 2
 
-      //   case 2 :
-      //     setTimeout(() => {
-      //       document.getElementById("handright").style.animation = ""
-      //       document.getElementById("handleft").style.animation = ""
-      //       },2000)  
-      //   break;
+      switch (index) {
+        case -1 :
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+          document.getElementById("bravo-P1-2").style.opacity = "1"
+          break;
 
-      //   case 3 :
-      //     setTimeout(() => {
-      //       document.getElementById("chatbot-stef2").style.opacity = "0"
-      //       document.getElementById("chatbot-stef3").style.opacity = "1"
-      //       }, 2000);
-      //     break;
-
-      //   case 6 :
-      //     document.getElementById("chatbot-sam1").style.opacity = "0"
-      //     document.getElementById("chatbot-sam2").style.opacity = "1"
-      //     setTimeout(() => {
-      //       document.getElementById("chatbot-stef2").style.opacity = "1"
-      //       document.getElementById("chatbot-stef3").style.opacity = "0"
-      //       }, 1000);
-      //     break;
-
-      //     case 7 : 
-      //     document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-      //     document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-      //     break;
-
-      //     case 8 :
-      //       setTimeout(() => {
-      //         document.getElementById("handright").style.animation = ""
-      //         document.getElementById("handleft").style.animation = ""
-      //         },2000)    
-      //     break;
-
-      //     case 14 :
-      //       setTimeout(() => {
-      //         document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-      //         document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-      //         },1000)    
-      //     break;
-
-      //     case 15 :
-      //       setTimeout(() => {
-      //         document.getElementById("handright").style.animation = ""
-      //         document.getElementById("handleft").style.animation = ""
-      //         },1000)    
-      //     break;
-
-      //     case 16 :
-      //       document.getElementById("chatbot-stef2").style.opacity = "0"
-      //       document.getElementById("chatbot-stef3").style.opacity = "1"
-      //     break;      
-
-      //     case 36 :
-      //       setTimeout(() => {
-      //       document.getElementById("chatbot-stef3").style.opacity = "0"
-      //       document.getElementById("chatbot-stef1").style.opacity = "1"
-      //       eraseHand = document.getElementsByClassName("risenHand")
-      //       for (let x = 0; x < eraseHand.length; x++) {
-      //         eraseHand[x].style.display="none"
-      //       }
-      //       },2000)
-      //     break;      
-
-      //     case 38 :
-      //       document.getElementById("chatbot-sam2").style.opacity = "0"
-      //       document.getElementById("chatbot-sam1").style.opacity = "1"
-      //     break;
-    
-
-      //  }
+        case 4 :
+          setTimeout(() => {
+            document.getElementById("bravo-P1-1").style.opacity = "1"
+            document.getElementById("bravo-P1-2").style.opacity = "0"            
+          }, 1000);
+          break;
+       }
 
     
       //END CONDITION
@@ -348,7 +290,6 @@ const touchtouch = function(e){
   }, 100);
   
   }
-
 
 const moveup = function(div){
 

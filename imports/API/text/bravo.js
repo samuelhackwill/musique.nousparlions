@@ -4,6 +4,7 @@
 // 99 : bulle fadeout
 
 export const data = [
+{player:99,text:"..."},
 {player:1,text:"Tu n’applaudis pas?"},
 {player:20,text:"Non."},
 {player:99,text:"..."},
