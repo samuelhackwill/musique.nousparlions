@@ -10,29 +10,29 @@ const serverRendering = (req, res, next) =>
 	// can get the useragent this way
 	rootUrl = "https://musique.nousparlions.com"
 	timestamp = new Date()
-	// page = req.url
-	// console.log("serverRendering launching ", req.headers['user-agent'])
-	// console.log(timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds())
+	path = req.url
+	console.log("serverRendering launching ", req.headers['user-agent'])
+	console.log(timestamp.getHours() + ":" + timestamp.getMinutes() + ":" + timestamp.getSeconds())
 	// console.log("full REQ ", req)
 	// console.log("REQ url ", req.url)
-	
-	// console.log("which page svp? ", page)
+	// console.log("which path svp? ", path)
+	// console.log("which title svp? ", path.substring(1))
 	// i guess i can get the URL this way?
     try 
     {
 	    const ua = req.headers['user-agent'];
 
-	    if (/bot|whatsapp|facebook|twitter|pinterest|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i.test(ua)) 
+	    if (/bot|curl|whatsapp|facebook|twitter|pinterest|google|baidu|bing|msn|duckduckgo|teoma|slurp|yandex/i.test(ua)) 
 	    {
 
 			if(req.url!=="/"){
-				// console.log("not accessing root")
+				console.log("not accessing root")
 				path = req.url
-				// console.log("page req url : ", path, " and substr : ", path.substring(1))
+				console.log("page req url : ", path, " and substr : ", path.substring(1))
 				titre = path.substring(1)
 			}else{
 				// show page 1 preview for root
-				// console.log("accessing root!")
+				console.log("accessing root!")
 				titre = "Discussions"
 			}
 
