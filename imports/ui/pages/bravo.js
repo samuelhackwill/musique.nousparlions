@@ -20,14 +20,10 @@ Template.bravoSVG.onRendered(function(){
         document.getElementById("pasapplaudit").style.opacity = 1
         document.getElementById("petitapplaudit").style.opacity = 1
         document.getElementById("public").style.opacity = 1
-        document.getElementById("nuitAmericaine").style.opacity = 1
+        document.getElementById("nuitAmericaine").style.opacity = .6
 
         document.addEventListener("keyup", next)
         document.addEventListener("touchstart", touchtouch)
-
-        // setTimeout(() => {
-        //     document.getElementById("nuitAmericaine").style.opacity = 0
-        // }, 2000);
       })
 
       nudge = setTimeout(() => {
@@ -213,6 +209,8 @@ const next = function(e){
       // P2-8 : part 1
       // P2-9 : part 2
 
+      console.log("NEXT ", index)
+
       switch (index) {
         case -1 :
           document.getElementById("bravo-P1-1").style.opacity = "0"
@@ -225,6 +223,136 @@ const next = function(e){
             document.getElementById("bravo-P1-2").style.opacity = "0"            
           }, 1000);
           break;
+
+        case 8 :
+          setTimeout(() => {
+              document.getElementById("nuitAmericaine").style.opacity = 0
+          }, 1000);
+        break;
+
+        case 18 :
+          document.getElementById("bravo-P2-2").style.opacity = "1"
+          document.getElementById("bravo-P2-1").style.opacity = "0"            
+        break;
+
+        case 21 :
+          document.getElementById("bravo-P2-3").style.opacity = "1"
+          document.getElementById("bravo-P2-2").style.opacity = "0"  
+        break;
+
+        case 25 :
+          document.getElementById("bravo-P2-4").style.opacity = "1"
+          document.getElementById("bravo-P2-3").style.opacity = "0"
+        break
+
+        case 26 :
+          document.getElementById("bravo-P2-5").style.opacity = "1"
+            document.getElementById("bravo-P2-4").style.opacity = "0"
+        break;
+
+        case 29 :
+          document.getElementById("bravo-P2-6").style.opacity = "1"
+          document.getElementById("bravo-P2-5").style.opacity = "0"
+        break;
+
+        case 31 :
+          document.getElementById("bravo-P2-7").style.opacity = "1"
+          document.getElementById("bravo-P2-6").style.opacity = "0"
+        break;
+
+        case 39 :
+          document.getElementById("bravo-P2-1").style.opacity = "1"
+          document.getElementById("bravo-P2-7").style.opacity = "0"
+        break;
+
+        case 43 :
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+          document.getElementById("bravo-P1-2").style.opacity = "1"
+        break;
+
+        case 47 :
+          document.getElementById("bravo-P2-1").style.opacity = "0"
+          document.getElementById("bravo-P2-8").style.opacity = "1"
+          setTimeout(()=>{
+            document.getElementById("bravo-P1-2").style.opacity = "0"
+            document.getElementById("bravo-P1-3").style.opacity = "1"
+          },500)
+
+          // ;)
+
+          setTimeout(() => {
+            document.getElementById("bravo-P2-8").style.opacity = "0"
+            document.getElementById("bravo-P2-9").style.opacity = "1"
+            setTimeout(() => {
+              document.getElementById("bravo-P2-9").style.transition = "opacity 2s"
+            },100)
+            setTimeout(() => {
+              document.getElementById("bravo-P2-9").style.opacity = "0"
+            },2000)  
+          },2000)
+        break;
+
+        case 51:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+        break;
+
+        case 53:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          setTimeout(() => {
+            document.getElementById("bravo-P1-1").style.opacity = "0"
+            document.getElementById("bravo-P1-4").style.opacity = "1"
+          },200)  
+        break;
+
+        case 55:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          document.getElementById("bravo-P1-4").style.opacity = "0"
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+        break;
+
+        case 56:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          document.getElementById("bravo-P1-4").style.opacity = "1"
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+        break;
+
+        case 58:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+          document.getElementById("bravo-P1-4").style.opacity = "0"
+        break;
+
+        case 59:
+          document.getElementById("bravo-P1-3").style.opacity = "0"
+          document.getElementById("bravo-P1-4").style.opacity = "1"
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+        break;
+
+        case 60:
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+          document.getElementById("bravo-P1-4").style.opacity = "0"
+        break;
+
+        case 61:
+          document.getElementById("bravo-P1-4").style.opacity = "1"
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+        break;
+
+        case 62:
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+          document.getElementById("bravo-P1-4").style.opacity = "0"
+        break;
+
+        case 63:
+          document.getElementById("bravo-P1-4").style.opacity = "1"
+          document.getElementById("bravo-P1-1").style.opacity = "0"
+        break;
+
+        case 64:
+          document.getElementById("bravo-P1-1").style.opacity = "1"
+          document.getElementById("bravo-P1-4").style.opacity = "0"
+        break;
        }
 
     
@@ -246,6 +374,7 @@ const next = function(e){
         if(nudge){
           clearTimeout(nudge)
         }
+
 
         
         seats = document.getElementById("seats")
