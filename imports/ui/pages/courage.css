@@ -6,3 +6,46 @@
 #courage-title{
     animation : showAndHideTitle 3s;
 }
+
+.awkwardJiggle{
+    animation: Jiggle .3s infinite;
+}
+
+.normalJiggle{
+    animation: Jiggle .7s infinite;
+}
+
+.depasseSam{
+    animation: depasseSam 7s linear;
+    animation-fill-mode: forwards;
+}
+
+.depasseSam2{
+    animation: depasseSam2 5s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes Jiggle{
+    0%, 100% {transform: translateY(0vh);}
+    50% {transform : translateY(1vw);}
+}
+
+@keyframes depasseSam{
+    0% {transform : translateX(0vw);}
+        /* walking towards samuel */
+    15% {transform : translateX(-12.5vw)}
+        /* passing samuel */
+    50% {transform : translateX(-25vw);}
+        /* going to seat */
+    100% {transform : translateX(-60vw);}
+}
+
+@keyframes depasseSam2{
+    0% {transform : translateX(0vw);}
+        /* walking towards samuel */
+    10% {transform : translateX(-5vw)}
+        /* passing samuel */
+    65% {transform : translateX(-20vw);}
+        /* going to seat */
+    100% {transform : translateX(-35vw);}
+}

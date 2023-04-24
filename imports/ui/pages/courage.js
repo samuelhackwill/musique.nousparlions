@@ -3,7 +3,7 @@ import './courage.css'
 
 import {data} from '../../API/text/courage.js';
 
-let lastPlayer = null
+let cutscreen = false
 
 Template.courageSVG.onCreated(function(){
     document.body.style.backgroundColor = "#B28D7F"
@@ -177,6 +177,13 @@ const destroyAnimatedStuff = function(){
 }
 
 const next = function(e){
+
+
+      if(cutscreen){
+        return
+      }
+
+
       e?.preventDefault();
 
       document.getElementById("instruct").style.opacity = "0"
@@ -194,6 +201,7 @@ const next = function(e){
       endOfText = data.length-1
 
         // TIMED EVENTS
+        // LOOL FU SO STUPIDLY COMPLICATED
 
         switch (index) {
             case -1 :
@@ -219,54 +227,180 @@ const next = function(e){
             case 4 :
                 document.getElementById("courage-phylactere").style.opacity = 1
             break;
-            case 14 :
+            
+            // animation of first guy
+            
+            case 25 :
                 document.getElementById("courage-phylactere").style.opacity = 0
-            break;
-            case 15 :
                 document.getElementById("courage-public").style.opacity = 1
             break;
-            case 16 :
+            case 26 :
                 document.getElementById("courage-p1-0").style.opacity = 0
                 document.getElementById("courage-p1-1").style.opacity = 1
             break;
-            case 17 :
+            case 27 :
                 document.getElementById("mainprend").style.opacity = 0
                 document.getElementById("maindonne").style.opacity = 1
             break;
-            case 18 :
+            case 28 :
                 document.getElementById("mainprend").style.opacity = 1
                 document.getElementById("maindonne").style.opacity = 0
                 document.getElementById("courage-p1-1").style.opacity = 0
                 document.getElementById("courage-p1-2").style.opacity = 1
             break;
-            case 19 :
+            case 29 :
                 document.getElementById("courage-samuel-2").style.opacity = 0
                 document.getElementById("courage-samuel-3").style.opacity = 1
             break;
-            case 20 :
+            case 30 :
                 document.getElementById("courage-p1-2").style.opacity = 0
                 document.getElementById("courage-p1-3").style.opacity = 1
             break;
-            case 21 :
+            case 31 :
                 document.getElementById("courage-samuel-3").style.opacity = 0
                 document.getElementById("courage-samuel-4").style.opacity = 1
             break;
-            case 22 :
+            case 32 :
                 document.getElementById("courage-p1-3").style.opacity = 0
                 document.getElementById("courage-p1-2").style.opacity = 1
             break;
+            case 33 :
+              // we need to prevent users from doing stuff if sam is not seated.
+              cutscreen = true
 
-            // p1 arrive
-            // p1 se met devant l'ouvreur
-            // l'ouvreur tend la main
-            // p1 se met devant samuel
-            // samuel lève la tête
-            // p1 monte son doigt
-            // samuel se lève
-            // animation de P1 jusqu'à sa place, puis s'asseoit.
-            // samuel se rasseoit
+              theGuyContainer = document.getElementById("courage-p1-2-animator")
+              theGuy = document.getElementById("courage-p1-2")
+
+              theGuyContainer.classList.add("depasseSam")
+              theGuy.classList.add("normalJiggle")
+
+              theGuyContainer.addEventListener("animationend", function(){
+                document.getElementById("courage-p1-2").classList.remove("normalJiggle")
+                setTimeout(() => {
+                  // take a seat
+                  document.getElementById("courage-p1-2").style.opacity = 0
+                  document.getElementById("courage-public-assis").style.opacity = 1
+                  },1000)
+              })
+
+                setTimeout(() => {
+                  document.getElementById("courage-p1-2").classList.remove("normalJiggle")
+                  document.getElementById("courage-p1-2").classList.add("awkwardJiggle")
+                  // the timeout should be 15% of animation
+                }, 1050);
+
+                setTimeout(() => {
+                  document.getElementById("courage-p1-2").classList.remove("awkwardJiggle")
+                  document.getElementById("courage-p1-2").classList.add("normalJiggle")
+                  // this  should be 50% of animation
+
+                  setTimeout(() => {
+                    // ok, sam is seated again, he can carry on reading.
+                    cutscreen = false
+                    document.getElementById("courage-samuel-4").style.opacity = 0
+                    document.getElementById("courage-samuel-2").style.opacity = 1    
+                  },1500)
+                }, 3500);
+            break;
+
+            // end of animation of first guy
             
+            case 34 :
+              document.getElementById("courage-phylactere").style.opacity = 1
+            break;
 
+            case 35 :
+              document.getElementById("courage-phylactere").style.opacity = 0
+            break;
+
+            // animation of the other peeps
+
+            case 36 :
+                document.getElementById("courage-p2-0").style.opacity = 1
+            break;
+            case 37 :
+                document.getElementById("courage-p2-0").style.opacity = 0
+                document.getElementById("courage-p2-1").style.opacity = 1
+            break;
+            case 38 :
+                document.getElementById("mainprend").style.opacity = 0
+                document.getElementById("maindonne").style.opacity = 1
+            break;
+            case 39 :
+                document.getElementById("mainprend").style.opacity = 1
+                document.getElementById("maindonne").style.opacity = 0
+                document.getElementById("courage-p2-1").style.opacity = 0
+                document.getElementById("courage-p2-2a").style.opacity = 1
+                document.getElementById("courage-p2-2b").style.opacity = 1
+            break;
+            case 40 :
+                document.getElementById("courage-samuel-2").style.opacity = 0
+                document.getElementById("courage-samuel-3").style.opacity = 1
+            break;
+            case 41 :
+                document.getElementById("courage-samuel-3").style.opacity = 0
+                document.getElementById("courage-samuel-4").style.opacity = 1
+            break;
+            case 42 :
+              // we need to prevent users from doing stuff if sam is not seated.
+              cutscreen = true
+
+              theGuyContainer1 = document.getElementById("courage-p2-2b-animator")
+              theGuy1 = document.getElementById("courage-p2-2b")
+
+              theGuyContainer2 = document.getElementById("courage-p2-2a-animator")
+              theGuy2 = document.getElementById("courage-p2-2a")
+
+              setTimeout(() => {
+                theGuyContainer1.classList.add("depasseSam2")
+                theGuy1.classList.add("normalJiggle")
+              }, 500);
+                            
+              theGuyContainer2.classList.add("depasseSam2")
+              theGuy2.classList.add("normalJiggle")  
+
+              theGuyContainer1.addEventListener("animationend", function(){
+                document.getElementById("courage-p2-2b").classList.remove("normalJiggle")
+                setTimeout(() => {
+                  document.getElementById("courage-p2-2b").style.opacity = 0
+                  document.getElementById("courage-p2-3b").style.opacity = 1
+                  },1000)
+              })
+
+              theGuyContainer2.addEventListener("animationend", function(){
+                document.getElementById("courage-p2-2a").classList.remove("normalJiggle")
+                setTimeout(() => {
+                  document.getElementById("courage-p2-2a").style.opacity = 0
+                  document.getElementById("courage-p2-3a").style.opacity = 1
+                  },1000)
+              })
+
+                setTimeout(() => {
+                  document.getElementById("courage-p2-2b").classList.remove("normalJiggle")
+                  document.getElementById("courage-p2-2b").classList.add("awkwardJiggle")
+                  document.getElementById("courage-p2-2a").classList.remove("normalJiggle")
+                  document.getElementById("courage-p2-2a").classList.add("awkwardJiggle")
+                  // the timeout should be 10% of animation
+                }, 500);
+
+                setTimeout(() => {
+                  document.getElementById("courage-p2-2b").classList.remove("awkwardJiggle")
+                  document.getElementById("courage-p2-2b").classList.add("normalJiggle")
+                  document.getElementById("courage-p2-2a").classList.remove("awkwardJiggle")
+                  document.getElementById("courage-p2-2a").classList.add("normalJiggle")
+                  // this  should be 65% of animation
+
+                  setTimeout(() => {
+                    // ok, sam is seated again, he can carry on reading.
+                    cutscreen = false
+                    document.getElementById("courage-samuel-4").style.opacity = 0
+                    document.getElementById("courage-samuel-2").style.opacity = 1    
+                  },1500)
+                }, 4000);
+            break;
+          case 43 :
+            document.getElementById("courage-phylactere").style.opacity = 1
+          break;
         }
 
       
@@ -282,31 +416,55 @@ const next = function(e){
           // then fade out.
           console.log("END OF TEXT")
 
+          document.getElementById("courage-phylactere").style.opacity = 0
+
+
           document.removeEventListener("keyup", next)
           document.removeEventListener("touchstart", touchtouch)
 
 
-        //   if(nudge){
-        //     clearTimeout(nudge)
-        //   }
-
-        //   var el = document.getElementsByClassName("car")[0];
-        //   el.style.animation = 'carOut 20s';
-
-        //   document.getElementById("co2-bulle").style.opacity = "0"
-
+          if(nudge){
+            clearTimeout(nudge)
+          }
           
-        //   setTimeout(() => {
-        //     bg = document.getElementById("co2-bg")
-        //     bg.style.transition = "opacity 5s"
-        //     bg.style.opacity = "0"
-        //     bg.addEventListener("transitionend", destroyAnimatedStuff)
-        //     setTimeout(() => {
-        //       console.log("bg should be dark, show credits")
-        //       credits = document.getElementById("co2-credits")
-        //       credits.style.opacity = "1"  
-        //     }, 1000)
-        //   }, 2000);
+          setTimeout(() => {
+
+            a = document.getElementById("bg-effects")
+            a.style.transition = "opacity 5s;"
+            a.style.opacity = 0
+  
+            b = document.getElementById("r2")
+            b.style.transition = "opacity 5s;"
+            b.style.opacity = 0
+  
+            c = document.getElementById("courage-ouvreur")
+            c.style.transition = "opacity 5s;"
+            c.style.opacity = 0
+  
+            d = document.getElementById("courage-public")
+            d.style.transition = "opacity 5s;"
+            d.style.opacity = 0
+  
+            e = document.getElementById("courage-samuels-assis")
+            e.style.transition = "opacity 5s;"
+            e.style.opacity = 0
+  
+            f = document.getElementById("r1")
+            f.style.transition = "opacity 5s;"
+            f.style.opacity = 0
+  
+            g = document.getElementById("courage-public-assis")
+            g.style.transition = "opacity 5s;"
+            g.style.opacity = 0
+  
+
+            g.addEventListener("transitionend", destroyAnimatedStuff)
+            setTimeout(() => {
+              console.log("bg should be dark, show credits")
+              credits = document.getElementById("courage-credits")
+              credits.style.opacity = "1"  
+            }, 1000)
+          }, 2000);
 
           return
         }

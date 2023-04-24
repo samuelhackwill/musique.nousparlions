@@ -14,15 +14,6 @@ export const data = [
 "« au détriment du bon goût »",
 "« de la justice sociale »",
 "« ou de la créativité musicale. »",
-"", // p1 arrive
-"", // p1 se met devant l'ouvreur
-"", // l'ouvreur tend la main
-"", // p1 se met devant samuel
-"", // samuel lève la tête
-"", // p1 monte son doigt
-"", // samuel se lève
-"", // animation de P1 jusqu'à sa place, puis s'asseoit.
-"", // samuel se rasseoit
 "« vous allez découvrir une programmation spéciale »",
 "« effectuée par un comité d'artistes interprètes irrités »",
 "« qui ont décidé de vous faire écouter, ce qui, selon eux »",
@@ -34,6 +25,23 @@ export const data = [
 "« intitulée : »",
 "« aller chercher soi-même sa pizza en vélo quand on est valide et en bonne santé »",
 "« est une question de dignité humaine »",
+"", // p1 arrive
+"", // p1 se met devant l'ouvreur
+"", // l'ouvreur tend la main
+"", // p1 se met devant samuel
+"", // samuel lève la tête
+"", // p1 monte son doigt
+"", // samuel se lève
+"", // animation de P1 jusqu'à sa place, puis s'asseoit.
+"", // samuel se rasseoit
+"", // ?
+
+
+
+
+// attenday
+
+
 "", // p2 & 3 arrivent
 "", // p2 & 3 se mettent devant l'ouvreur
 "", // l'ouvreur tend la main
