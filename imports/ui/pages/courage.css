@@ -3,6 +3,19 @@
     src: url('/fonts/SourceSerifPro-Regular.ttf') format('truetype');  
 }   
 
+@font-face {
+    font-family: SourceRegularFatto;
+    src: url('/fonts/SourceSerifPro-BlackItalic.ttf') format('truetype');  
+}   
+
+.huge-bulle{
+    font-size: 48px!important;
+}
+
+.fat-font{
+    font-family:'SourceRegularFatto'!important;
+}
+
 #courage-title{
     animation : showAndHideTitle 3s;
 }

@@ -4,9 +4,10 @@ import './courage.css'
 import {data} from '../../API/text/courage.js';
 
 let cutscreen = false
+let dangColor = "#B28D7F"
 
 Template.courageSVG.onCreated(function(){
-    document.body.style.backgroundColor = "#B28D7F"
+    document.body.style.backgroundColor = dangColor
     counter = new ReactiveVar(-1);
 })
 
@@ -38,6 +39,10 @@ Template.courageSVG.onRendered(function(){
 
 
 Template.courageSVG.helpers({
+  dangColor(){
+    return dangColor
+  },
+
 	wrapLine(){
         // this function's goal is to retrieve text and to split it in
         // one to six lines. One very long word breaks the wrapping.
@@ -226,6 +231,10 @@ const next = function(e){
             break;
             case 4 :
                 document.getElementById("courage-phylactere").style.opacity = 1
+            break;
+            
+            case 9 : 
+
             break;
             
             // animation of first guy
@@ -427,44 +436,39 @@ const next = function(e){
             clearTimeout(nudge)
           }
           
+          a = document.getElementById("bg-effects")
+          a.style.transition = "opacity 3s"
+          b = document.getElementById("r2")
+          b.style.transition = "opacity 3s"
+          c = document.getElementById("courage-ouvreur")
+          c.style.transition = "opacity 3s"
+          d = document.getElementById("courage-public")
+          d.style.transition = "opacity 3s"
+          e = document.getElementById("courage-samuels-assis")
+          e.style.transition = "opacity 3s"          
+          f = document.getElementById("r1")
+          f.style.transition = "opacity 3s"
+          g = document.getElementById("courage-public-assis")
+          g.style.transition = "opacity 3s"
+
+          g.addEventListener("transitionend", destroyAnimatedStuff)
+
           setTimeout(() => {
+            console.log("bg should be dark, show credits")
+            credits = document.getElementById("courage-credits")
+            credits.style.opacity = "1"  
+          }, 2500)
+                      
 
-            a = document.getElementById("bg-effects")
-            a.style.transition = "opacity 5s;"
-            a.style.opacity = 0
-  
-            b = document.getElementById("r2")
-            b.style.transition = "opacity 5s;"
-            b.style.opacity = 0
-  
-            c = document.getElementById("courage-ouvreur")
-            c.style.transition = "opacity 5s;"
-            c.style.opacity = 0
-  
-            d = document.getElementById("courage-public")
-            d.style.transition = "opacity 5s;"
-            d.style.opacity = 0
-  
-            e = document.getElementById("courage-samuels-assis")
-            e.style.transition = "opacity 5s;"
-            e.style.opacity = 0
-  
-            f = document.getElementById("r1")
-            f.style.transition = "opacity 5s;"
-            f.style.opacity = 0
-  
-            g = document.getElementById("courage-public-assis")
-            g.style.transition = "opacity 5s;"
-            g.style.opacity = 0
-  
-
-            g.addEventListener("transitionend", destroyAnimatedStuff)
-            setTimeout(() => {
-              console.log("bg should be dark, show credits")
-              credits = document.getElementById("courage-credits")
-              credits.style.opacity = "1"  
-            }, 1000)
-          }, 2000);
+          setTimeout(() => {
+            document.getElementById("bg-effects").style.opacity = 0
+            document.getElementById("r2").style.opacity = 0
+            document.getElementById("courage-ouvreur").style.opacity = 0
+            document.getElementById("courage-public").style.opacity = 0
+            document.getElementById("courage-samuels-assis").style.opacity = 0
+            document.getElementById("r1").style.opacity = 0  
+            document.getElementById("courage-public-assis").style.opacity = 0
+          }, 1000);
 
           return
         }

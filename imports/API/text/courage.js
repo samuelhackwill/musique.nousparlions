@@ -4,57 +4,69 @@ export const data = [
 "", // l'ouvreur tend la main
 "", // sam se met devant l'ouvreur
 "", // sam va s'asseoir et l'ouvreur rentre sa main.
-"« le programme de ce soir est dédié à l'absence de courage en musique. »",
-"« quels sont les compositeurs et les compositrices, »",
-"« qui au cours de leur carrière »",
-"« on le plus fait preuve d'obséquiosité »",
-"« de lâcheté, de conformisme »",
-"« et se sont compromis avec les pouvoirs en place »",
-"« pour l'avancement de leur carrière »",
-"« au détriment du bon goût »",
-"« de la justice sociale »",
-"« ou de la créativité musicale. »",
-"« vous allez découvrir une programmation spéciale »",
-"« effectuée par un comité d'artistes interprètes irrités »",
-"« qui ont décidé de vous faire écouter, ce qui, selon eux »",
-"« relève de la lâcheté intellectuelle et de l'inculture politique en musique »",
-"« en dernière partie de soirée, »",
-"« notre invité exceptionnel, le baryton Sébastien Soules »",
-"« converti livreur à vélo par nécessité pendant le confinement lié à la maladie de covid-19 »",
-"« viendra présenter sa nouvelle pièce d'opéra »",
-"« intitulée : »",
-"« aller chercher soi-même sa pizza en vélo quand on est valide et en bonne santé »",
-"« est une question de dignité humaine »",
-"", // p1 arrive
-"", // p1 se met devant l'ouvreur
-"", // l'ouvreur tend la main
-"", // p1 se met devant samuel
-"", // samuel lève la tête
-"", // p1 monte son doigt
-"", // samuel se lève
-"", // animation de P1 jusqu'à sa place, puis s'asseoit.
-"", // samuel se rasseoit
-"", // ?
-
-
-
-
-// attenday
-
-
-"", // p2 & 3 arrivent
-"", // p2 & 3 se mettent devant l'ouvreur
-"", // l'ouvreur tend la main
-"", // p2 & 3 se mettent devant samuel
-"", // samuel lève la tête
-"", // samuel se lève 
-"", // animation de P2 & P3 jusqu'à leur place puis s'asseoient.
-"", // samuel se rasseoit.
-"« cette soirée est rendue possible par nos généreux mécènes »",
-"« que nous tenons à remercier chaleureusement »",
-"« merci à Uber, Amazon, BNP Paribas et Uniqlo. »"
+"Mardi 25 Avril 2023",
+"20h30",
+"La brèche festival, Chambéry",
+"Durée : 2 heures environ",
+"COURAGE",
+"",
+"photos et enregistrements vidéo ne sont pas autorisés pendant le concert.",
+"",
+"NOTE D'INTENTION",
+"le programme de ce soir est dédié à l'absence de courage en musique.",
+"quels sont les compositeurs et les compositrices,",
+"qui au cours de leur carrière",
+"on le plus fait preuve d'obséquiosité",
+"de lâcheté, de conformisme",
+"et se sont compromis avec les pouvoirs en place",
+"pour l'avancement de leur carrière",
+"au détriment du bon goût",
+"de la justice sociale",
+"ou de la créativité musicale.",
+"",
+"ce soir",
+"vous allez découvrir une programmation spéciale",
+"effectuée par un comité d'artistes interprètes irrités",
+"qui ont décidé de vous faire écouter, ce qui, selon eux",
+"relève de la lâcheté intellectuelle et de l'inculture politique en musique",
+"en dernière partie de soirée,",
+"notre invité exceptionnel,",
+"le baryton Sébastien Soules",
+"converti livreur à vélo par nécessité pendant le confinement lié à la maladie de covid-19",
+"viendra présenter sa nouvelle pièce d'opéra",
+"intitulée :",
+"aller chercher soi-même sa pizza en vélo quand on est valide et en bonne santé",
+"est une question de dignité humaine",
+"",
+"BIOGRAPHIES",
+"les interprètes sont né.e.s,",
+"les interprètes sont allé.e.s à l'école,",
+"les interprètes ont travaillé avec d'autres personnes.",
+"les interprètes sont de bonne humeur.",
+"comme il nous reste de la place dans la section 'biographies',",
+"les interprètes en profitent pour partager ce-dessous leur recette préférée de tarte à la tomate.",
+"",
+"CREDITS",
+"au moment de la création de cette pièce en 2022,",
+"lors de la précédente édition de La brèche festival,",
+"tous les partenaires privés et intitutionnels ont malheureusement décidé de retirer leur soutien au festival",
+"après avoir assisté à la première de ce concert performé.",
+"en conséquence de quoi, les interprètes vous signalent",
+"qu'aucun.e d'entre elleux ne sont rémunérés pour leur travail ce soir.",
+"en échange,",
+"nous vous proposons un protocole de paiement alternatif:",
+"entre chaque mouvement, nous nous interromprons pour tirer au sort dans la liste ci-dessous",
+"qui regroupe exhaustivement tous les problèmes personnels ou familiaux vécus par les interprètes",
+"pour lesquels iels pourraient recevoir un coup de main,",
+"et nous tirerons une personne au sort dans le public pour lui venir en aide.",
+"merci pour votre solidarité",
+"longue vie à la culture.",
+""
 ]
 
+// "cette soirée est rendue possible par nos généreux mécènes",
+// "que nous tenons à remercier chaleureusement",
+// "merci à Uber, Amazon, BNP Paribas et Uniqlo."
 // chères spectatrices, chers spectateurs
 // nous souhaitons vous informer qu'une coquille s'est manifestement glissé dans le programme de salle qui vous a été distribué ce soir
 // nosu vous prions de bien vouloir nous excuser,
