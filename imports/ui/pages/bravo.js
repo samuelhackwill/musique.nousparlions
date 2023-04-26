@@ -27,7 +27,7 @@ Template.bravoSVG.onRendered(function(){
       })
 
       nudge = setTimeout(() => {
-        document.getElementById("instruct").style.opacity="1"
+        document.getElementById("instruct").style.opacity="0.1"
       }, 15000);
 
       document.body.scrollIntoView({
@@ -156,7 +156,7 @@ const next = function(e){
     }
 
     nudge = setTimeout(() => {
-      document.getElementById("instruct").style.opacity="1"
+      document.getElementById("instruct").style.opacity="0.1"
     }, 15000);
 
 
@@ -367,40 +367,54 @@ const next = function(e){
         // then fade out.
         console.log("END OF TEXT")
 
-        document.removeEventListener("keyup", next)
-        document.removeEventListener("touchstart", touchtouch)
+        document.getElementById("bravo-P1-5").style.opacity = "1"
+        document.getElementById("larme1").classList.add("larme1")
+        document.getElementById("larme2").classList.add("larme2")
+        document.getElementById("bravo-P1-1").style.opacity = "0"
+        document.getElementById("bravo-P1-2").style.opacity = "0"
+        document.getElementById("bravo-P1-3").style.opacity = "0"
+        document.getElementById("bravo-P1-4").style.opacity = "0"
         document.getElementById("bravo-text").style.opacity="0"
-        
-        if(nudge){
-          clearTimeout(nudge)
-        }
 
 
-        
-        seats = document.getElementById("seats")
-        bob = document.getElementById("pasapplaudit")
-        bobet = document.getElementById("petitapplaudit")
-        hands = document.getElementById("public")
-        seats.style.transition = "opacity 5s"
-        seats.style.opacity = "0"
-        bob.style.transition = "opacity 5s"
-        bob.style.opacity = "0"
-        bobet.style.transition = "opacity 5s"
-        bobet.style.opacity = "0"
-        hands.style.transition = "opacity 5s"
-        hands.style.opacity = "0"
-
-          seats.addEventListener("transitionend", destroyAnimatedStuff)
-          
-          setTimeout(() => {
-            console.log("bg should be dark, show credits")
-            credits = document.getElementById("bravo-credits")
-            credits.style.opacity = "1"  
-          }, 2000)
+        document.getElementById("larme1").addEventListener("animationend", hideEverything)
 
         return
       }
       lastPlayer = player
+  }
+
+  const hideEverything = function(){
+
+    document.removeEventListener("keyup", next)
+    document.removeEventListener("touchstart", touchtouch)
+    
+    if(nudge){
+      clearTimeout(nudge)
+    }
+
+
+    seats = document.getElementById("seats")
+    bob = document.getElementById("pasapplaudit")
+    bobet = document.getElementById("petitapplaudit")
+    hands = document.getElementById("public")
+    seats.style.transition = "opacity 5s"
+    seats.style.opacity = "0"
+    bob.style.transition = "opacity 5s"
+    bob.style.opacity = "0"
+    bobet.style.transition = "opacity 5s"
+    bobet.style.opacity = "0"
+    hands.style.transition = "opacity 5s"
+    hands.style.opacity = "0"
+
+      seats.addEventListener("transitionend", destroyAnimatedStuff)
+      
+      setTimeout(() => {
+        console.log("bg should be dark, show credits")
+        credits = document.getElementById("bravo-credits")
+        credits.style.opacity = "1"  
+      }, 2000)
+
   }
 
 const touchtouch = function(e){

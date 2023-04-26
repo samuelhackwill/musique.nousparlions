@@ -75,6 +75,25 @@
     animation : clapGauche 1.5s infinite steps(1) reverse;
 }
 
+#bravo-P1-5-mainDroite{
+    animation : clapDroite 1.5s infinite steps(1);
+}
+
+#bravo-P1-5-mainGauche{
+    animation : clapGauche 1.5s infinite steps(1) reverse;
+}
+
+.larme1{
+    animation : cry 6s ;
+    animation-fill-mode: backwards ease-in;
+}
+
+.larme2{
+    animation : cry 6s ;
+    animation-delay: .8s;
+    animation-fill-mode: backwards ease-in;
+}
+
 #phylacteres{
     opacity: 1;
     display: inline;
@@ -146,4 +165,12 @@
 @keyframes clapPublic {
     0%, 100%{opacity:0}
     50%{opacity:1}
+}
+
+@keyframes cry {
+    0%{opacity:0;}
+    40%{opacity:1;}
+    60%{transform: translateY(0vh); opacity:1;}
+    80%{opacity:0;}
+    100%{transform: translateY(10vh); opacity:0;}
 }
