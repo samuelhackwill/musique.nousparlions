@@ -27,7 +27,7 @@ Template.bravoSVG.onRendered(function(){
       })
 
       nudge = setTimeout(() => {
-        document.getElementById("instruct").style.opacity="0.1"
+        document.getElementById("instruct").style.opacity="1"
       }, 15000);
 
       document.body.scrollIntoView({
@@ -156,7 +156,7 @@ const next = function(e){
     }
 
     nudge = setTimeout(() => {
-      document.getElementById("instruct").style.opacity="0.1"
+      document.getElementById("instruct").style.opacity="1"
     }, 15000);
 
 

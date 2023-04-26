@@ -298,21 +298,21 @@ const next = function(e){
               setTimeout(() => {
                 document.getElementById("handright").style.animation = ""
                 document.getElementById("handleft").style.animation = ""
-                },2000)    
+                },4000)    
+            break;
+
+            case 13 :
+              setTimeout(() => {
+                document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
+                document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
+                },500)    
             break;
 
             case 14 :
               setTimeout(() => {
-                document.getElementById("handright").style.animation = "chatbot-typing .5s infinite steps(2)"
-                document.getElementById("handleft").style.animation = "chatbot-typing .5s infinite steps(2) reverse"
-                },1000)    
-            break;
-
-            case 15 :
-              setTimeout(() => {
                 document.getElementById("handright").style.animation = ""
                 document.getElementById("handleft").style.animation = ""
-                },1000)    
+                },2000)    
             break;
 
             case 16 :

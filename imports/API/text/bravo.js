@@ -48,7 +48,7 @@ export const data = [
 {player:1,text:"	moi je pense que même si on a pas super aimé il faut quand même applaudir"},
 {player:1,text:"	ne serait-ce que pour saluer le courage que ça demande de monter sur scène"},
 {player:1,text:"	ou pour rendre hommage aux sacrifices consentis par les musiciens pour leur art "},
-{player:1,text:"	toi quand tu étais ado, en rentrant des cours tu jouais à la console avec moi"},
+{player:1,text:"	nous quand on était ados on jouait à la console"},
 {player:1,text:"	alors que ces pianistes, quand iels étaient ados, en plus de leurs études,"},
 {player:1,text:"	iels se tapaient 8 heures d'entraînement par jour"},
 {player:2,text:"Ma crampe est passée, on se retrouve devant le théâtre."},

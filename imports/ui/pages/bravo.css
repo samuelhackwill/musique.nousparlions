@@ -145,6 +145,10 @@
     animation : clapPublic .6s infinite reverse steps(1);
 }
 
+.forceBlack{
+    fill:black;
+}
+
 @keyframes bravo-showAndHideTitle {
     0% {opacity : 0}
     15% {opacity : 1}

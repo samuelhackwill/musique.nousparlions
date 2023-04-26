@@ -9,7 +9,7 @@ export const data = [
 {player:1,text:"regarde, c'est ça le futur de la musique."},
 {player:1,text:"'compose-moi une courte mélodie pour piano'"},
 {player:1,text:"'dans le style de la 5e symphonie de Beethoven,'"},
-{player:1,text:"'mais en insérant une séquence inspirée du générique de questions pour un champion.'"},
+{player:1,text:"'mais en t'inspirant également du générique de questions pour un champion.'"},
 {player:30,text:"..."},
 {player:30,text:"...🎼!"},
 {player:2,text:"ah ouais c'est pas mal dans le genre."},

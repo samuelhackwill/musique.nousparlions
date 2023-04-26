@@ -3,27 +3,7 @@ import './co2.css';
 import {data} from '../../API/text/co2.js';
 
 Template.co2SVG.onCreated(function(){
-    // console.log(`
-    // LAYERS :
-    // ecrans
-    //     credits
-    //     titre
-    //     black 
-    // flash
-    // bulle 
-    //     texte 
-    //     fond 
-    // wheels 
-    // carbody  
-    // samuel 
-    // carinside 
-    // radar  
-    // house  
-    // trees 
-    // dentelles
-    // bg 
-
-    console.log(data)
+    // console.log(data)
     counter = new ReactiveVar(-1);
   })
 
