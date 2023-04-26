@@ -1,5 +1,4 @@
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
-// import { BlazeLayout } from "meteor/kadira:blaze-layout";
 
 import '../../ui/pages/co2.js';
 import '../../ui/pages/chatbot.js';
@@ -35,15 +34,16 @@ FlowRouter.route('/courage', {
   },
 });
 
-FlowRouter.route('/', {
-  name: 'home',
-  action() {
-    this.render('home')
-  }
-});
+// FlowRouter.route('/theLoser', {
+//   name: 'theLoser',
+//   action() {
+//     this.render('theLoserSVG')
+//   }
+// });
 
-// FlowRouter.notFound = {
-//   action() {
-//     this.render('App_body', 'App_notFound');
-//   },
-// };
+// FlowRouter.route('/laFile', {
+//   name: 'laFile',
+//   action() {
+//     this.render('laFileSVG')
+//   }
+// });

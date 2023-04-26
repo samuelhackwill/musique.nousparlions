@@ -4,6 +4,16 @@ import { WebApp } from 'meteor/webapp';
 // SEO BELOW
 // making routes and building headers for crawlers & bots.
 
+const text = {
+	chatbot : "dans 'Chatbot', deux personnes demandent à une soi-disant intelligence artificielle de composer de la musique.",
+	bravo : "dans 'Bravo', deux personnes se demandent pourquoi on applaudit à la fin d'un concert.",
+	courage : "dans 'Courage', une personne lit un programme de salle.",
+	theLoser : "dans 'The Loser', deux personnes parlent de Glenn Gould.",
+	laFile : "dans 'La file', une personne fait la queue à la billeterie.",
+	co2 : "dans 'CO2', une personne réfléchit au romantisme dans sa voiture.",
+	Discussions : "Ce site regroupe les histoires courtes écrites par Samuel Hackwill pour La brèche festival 2023."
+}
+
 const serverRendering = (req, res, next) => 
 {
 
@@ -82,7 +92,7 @@ const serverRendering = (req, res, next) =>
 					<meta property="og:image:height" content="643" />
 		          <meta property="og:url" content=${rootUrl}/>
 		          <meta property="og:type" content="website"/>
-		          <meta property="og:description" content="Dialogues animés de Samuel Hackwill, réalisés pour La brèche festival 2023."/>
+		          <meta property="og:description" content="${text[titre]}"/>
 		          <meta property="og:title" content="${titre}, La brèche festival"/>
 		      `;
 
