@@ -1,5 +1,7 @@
 import "/imports/startup/server";
+
 import { WebApp } from 'meteor/webapp';
+
 
 // SEO BELOW
 // making routes and building headers for crawlers & bots.

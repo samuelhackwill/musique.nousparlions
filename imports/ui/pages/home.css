@@ -21,3 +21,13 @@ a:visited{
 span{
     font-style: italic;
 }
+
+.count{
+    transition: opacity .5s;
+    opacity: 0;
+    color:rgb(0, 255, 0);
+}
+
+.count:nth-child(2){
+    color:grey;
+}

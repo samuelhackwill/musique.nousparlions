@@ -4,10 +4,12 @@ import './bravo.css'
 import {data} from '../../API/text/bravo.js';
 
 let lastPlayer = null
+let start = new Date()
 
 Template.bravoSVG.onCreated(function(){
     document.body.style.backgroundColor = "#333328"
     counter = new ReactiveVar(-1);
+    Meteor.call("insertStat", {story : "bravo", timeToFinish : null, date : start})
 })
 
 
@@ -366,6 +368,13 @@ const next = function(e){
         // if we're at the end of the text, tell car to go away
         // then fade out.
         console.log("END OF TEXT")
+    
+        document.removeEventListener("keyup", next)
+        document.removeEventListener("touchstart", touchtouch)
+    
+        finish = new Date()
+        console.log("time to finish ", finish - start)
+        Meteor.call("updateStat", {story : "bravo", timeToFinish : finish - start, date : start})
 
         document.getElementById("bravo-P1-5").style.opacity = "1"
         document.getElementById("larme1").classList.add("larme1")
@@ -386,8 +395,6 @@ const next = function(e){
 
   const hideEverything = function(){
 
-    document.removeEventListener("keyup", next)
-    document.removeEventListener("touchstart", touchtouch)
     
     if(nudge){
       clearTimeout(nudge)

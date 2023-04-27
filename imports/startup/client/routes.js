@@ -1,5 +1,7 @@
 import { FlowRouter } from "meteor/ostrio:flow-router-extra";
 
+import { Stats } from '../../API/stats/stats.js';
+
 import '../../ui/pages/co2.js';
 import '../../ui/pages/chatbot.js';
 import '../../ui/pages/bravo.js';
@@ -11,6 +13,12 @@ FlowRouter.route('/co2', {
   action() {
     this.render('co2SVG');
   },
+
+  waitOn(params) {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
 });
 
 FlowRouter.route('/chatbot', {
@@ -18,6 +26,12 @@ FlowRouter.route('/chatbot', {
   action() {
     this.render('chatbotSVG');
   },
+
+  waitOn(params) {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
 });
 
 FlowRouter.route('/bravo', {
@@ -25,6 +39,12 @@ FlowRouter.route('/bravo', {
   action() {
     this.render('bravoSVG');
   },
+
+  waitOn() {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
 });
 
 FlowRouter.route('/courage', {
@@ -32,7 +52,27 @@ FlowRouter.route('/courage', {
   action() {
     this.render('courageSVG');
   },
+
+  waitOn() {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
 });
+
+FlowRouter.route('/', {
+  name: 'home',
+  action() {
+    this.render('home');
+  },
+
+  waitOn() {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
+});
+
 
 // FlowRouter.route('/theLoser', {
 //   name: 'theLoser',

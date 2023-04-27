@@ -1,17 +1,35 @@
 <template name="home">
 
   <div class="homeDiv">
-    <h1>Ce site regroupe les histoires courtes écrites par <br/><a href=https://shh.ovh>Samuel Hackwill</a> pour <a href="https://www.labrechefestival.com">La brèche festival 2023.</a></h1>
+    <h1>Ce site regroupe les histoires courtes écrites par <a href=https://shh.ovh>Samuel&#8239;Hackwill</a> pour <a href="https://www.labrechefestival.com">La brèche festival 2023.</a></h1>
   
     <ol>
-      <li>Dans <a href="/chatbot">"Chatbot"</a>, deux personnes demandent à une soi-disant intelligence artificielle de composer de la musique.</li>
-      <li>Dans <a href="/bravo">"Bravo"</a>, deux personnes se demandent pourquoi on applaudit à la fin d'un concert.</li>
-      <li>Dans <span>"Courage"</span>, une personne lit un programme de salle.</li>
-      <li>Dans <span>"The loser"</span>, deux personnes parlent de Glenn Gould.</li>
-      <!-- <li>Dans <span>"La file"</span>, une personne fait la queue à la billeterie.</li> -->
-      <li>Dans <span>"CO2"</span>, une personne réfléchit au romantisme dans sa voiture.</li>
+      <li>Dans <a href="/chatbot">"Chatbot"</a>, deux personnes demandent à une soi-disant intelligence artificielle de composer de la musique. 
+        <span class="count">{{playCount arg="chatbot"}}</span>
+        <span class="count">{{playCountFinished arg="chatbot"}}</span>
+      </li>
+      <li>Dans <a href="/bravo">"Bravo"</a>, deux personnes se demandent pourquoi on applaudit à la fin d'un concert. 
+        <span class="count">{{playCount arg="bravo"}}</span>
+        <span class="count">{{playCountFinished arg="bravo"}}</span>
+      </li>
+      <li>Dans <span>"Courage"</span>, une personne lit un programme de salle. 
+        <span class="count">{{playCount arg="courage"}}</span>
+        <span class="count">{{playCountFinished arg="courage"}}</span>
+      </li>
+      <li>Dans <span>"The loser"</span>, deux personnes parlent de Glenn Gould. 
+        <span class="count">{{playCount arg="theLoser"}}</span>
+        <span class="count">{{playCountFinished arg="theLoser"}}</span>
+      </li>
+      <!-- <li>Dans <span>"La file"</span>, une personne fait la queue à la billeterie. <span class="count">{{playCount arg="theLoser"}}</span></li>-->
+      <li>Dans <span>"CO2"</span>, une personne réfléchit au romantisme dans sa voiture. 
+        <span class="count">{{playCount arg="co2"}}</span>
+        <span class="count">{{playCountFinished arg="co2"}}</span>
+      </li>
     </ol>
 
+      <p>
+          <span class="count"> Total play count is : <span style="color:grey">({{playCount}})</span> {{playCountFinished}}</span>
+      </p>
   </div>
 
 </template>

@@ -1,13 +1,16 @@
 import './chatbot.html';
 import './chatbot.css';
 import {data} from '../../API/text/chatbot.js';
+import {Stats} from '../../API/stats/stats.js';
 
 let lastPlayer = null
+let start = new Date()
 
 
 Template.chatbotSVG.onCreated(function(){
   console.log(data)
   counter = new ReactiveVar(-1);
+  Meteor.call("insertStat", {story : "chatbot", timeToFinish : null, date : start})
 })
 
 Template.chatbotSVG.onRendered(function(){
@@ -350,6 +353,10 @@ const next = function(e){
           // if we're at the end of the text, tell car to go away
           // then fade out.
           console.log("END OF TEXT")
+          finish = new Date()
+          console.log("time to finish ", finish - start)
+
+          Meteor.call("updateStat", {story : "chatbot", timeToFinish : finish - start, date : start})
 
           document.removeEventListener("keyup", next)
           document.removeEventListener("touchstart", touchtouch)
