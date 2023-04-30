@@ -23,6 +23,7 @@ span{
 }
 
 .count{
+    display: none;
     transition: opacity .5s;
     opacity: 0;
     color:rgb(0, 255, 0);

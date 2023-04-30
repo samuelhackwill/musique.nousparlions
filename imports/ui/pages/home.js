@@ -31,10 +31,12 @@ Template.home.helpers({
 Template.home.onRendered(function(){
     document.addEventListener("keydown", function(e){
         if (e.keyCode == 83) {
-            console.log("show")
             scoreDivs = document.getElementsByClassName("count")
             for (let x = 0; x < scoreDivs.length; x++) {
-                scoreDivs[x].style.opacity = 1
+                scoreDivs[x].style.display = "inline"
+                setTimeout(() => {
+                    scoreDivs[x].style.opacity = 1
+                }, 0);
             }
         }
     })

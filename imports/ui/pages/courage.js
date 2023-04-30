@@ -5,10 +5,12 @@ import {data} from '../../API/text/courage.js';
 
 let cutscreen = false
 let dangColor = "#B28D7F"
+let start = new Date()
 
 Template.courageSVG.onCreated(function(){
     document.body.style.backgroundColor = dangColor
     counter = new ReactiveVar(-1);
+    Meteor.call("insertStat", {story : "courage", timeToFinish : null, date : start})
 })
 
 Template.courageSVG.onRendered(function(){
@@ -458,6 +460,10 @@ const next = function(e){
 
           document.getElementById("courage-phylactere").style.opacity = 0
 
+          finish = new Date()
+          console.log("time to finish ", finish - start)
+          Meteor.call("updateStat", {story : "courage", timeToFinish : finish - start, date : start})
+  
 
           document.removeEventListener("keyup", next)
           document.removeEventListener("touchstart", touchtouch)
