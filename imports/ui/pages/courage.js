@@ -232,48 +232,54 @@ const next = function(e){
             case 4 :
                 document.getElementById("courage-phylactere").style.opacity = 1
             break;
-            
-            case 9 : 
 
+            // first break;
+
+            case 14:
+              document.getElementById("courage-phylactere").style.opacity = 0
+            break;
+
+            case 15:
+              document.getElementById("courage-phylactere").style.opacity = 1
             break;
             
             // animation of first guy
-            
-            case 25 :
-                document.getElementById("courage-phylactere").style.opacity = 0
+
+            case 16 :
                 document.getElementById("courage-public").style.opacity = 1
             break;
-            case 26 :
+            case 17 :
                 document.getElementById("courage-p1-0").style.opacity = 0
                 document.getElementById("courage-p1-1").style.opacity = 1
             break;
-            case 27 :
+            case 18 :
                 document.getElementById("mainprend").style.opacity = 0
                 document.getElementById("maindonne").style.opacity = 1
             break;
-            case 28 :
+            case 19 :
                 document.getElementById("mainprend").style.opacity = 1
                 document.getElementById("maindonne").style.opacity = 0
                 document.getElementById("courage-p1-1").style.opacity = 0
                 document.getElementById("courage-p1-2").style.opacity = 1
             break;
-            case 29 :
+            case 20 :
+                document.getElementById("courage-phylactere").style.opacity = 0
                 document.getElementById("courage-samuel-2").style.opacity = 0
                 document.getElementById("courage-samuel-3").style.opacity = 1
             break;
-            case 30 :
+            case 21 :
                 document.getElementById("courage-p1-2").style.opacity = 0
                 document.getElementById("courage-p1-3").style.opacity = 1
             break;
-            case 31 :
+            case 22 :
                 document.getElementById("courage-samuel-3").style.opacity = 0
                 document.getElementById("courage-samuel-4").style.opacity = 1
             break;
-            case 32 :
+            case 23 :
                 document.getElementById("courage-p1-3").style.opacity = 0
                 document.getElementById("courage-p1-2").style.opacity = 1
             break;
-            case 33 :
+            case 24 :
               // we need to prevent users from doing stuff if sam is not seated.
               cutscreen = true
 
@@ -313,44 +319,49 @@ const next = function(e){
             break;
 
             // end of animation of first guy
-            
-            case 34 :
+        
+            case 25:
               document.getElementById("courage-phylactere").style.opacity = 1
-            break;
+            break
 
-            case 35 :
+            // second break;
+
+            case 38 :
               document.getElementById("courage-phylactere").style.opacity = 0
             break;
 
             // animation of the other peeps
 
-            case 36 :
-                document.getElementById("courage-p2-0").style.opacity = 1
+            case 39 :
+              document.getElementById("courage-phylactere").style.opacity = 1
+              document.getElementById("courage-p2-0").style.opacity = 1
             break;
-            case 37 :
+
+            case 40 :
                 document.getElementById("courage-p2-0").style.opacity = 0
                 document.getElementById("courage-p2-1").style.opacity = 1
             break;
-            case 38 :
+            case 41 :
                 document.getElementById("mainprend").style.opacity = 0
                 document.getElementById("maindonne").style.opacity = 1
             break;
-            case 39 :
+            case 42 :
                 document.getElementById("mainprend").style.opacity = 1
                 document.getElementById("maindonne").style.opacity = 0
                 document.getElementById("courage-p2-1").style.opacity = 0
                 document.getElementById("courage-p2-2a").style.opacity = 1
                 document.getElementById("courage-p2-2b").style.opacity = 1
             break;
-            case 40 :
+            case 43 :
+                document.getElementById("courage-phylactere").style.opacity = 0
                 document.getElementById("courage-samuel-2").style.opacity = 0
                 document.getElementById("courage-samuel-3").style.opacity = 1
             break;
-            case 41 :
+            case 44 :
                 document.getElementById("courage-samuel-3").style.opacity = 0
                 document.getElementById("courage-samuel-4").style.opacity = 1
             break;
-            case 42 :
+            case 45 :
               // we need to prevent users from doing stuff if sam is not seated.
               cutscreen = true
 
@@ -407,9 +418,29 @@ const next = function(e){
                   },1500)
                 }, 4000);
             break;
-          case 43 :
-            document.getElementById("courage-phylactere").style.opacity = 1
-          break;
+            case 46 :
+              document.getElementById("courage-phylactere").style.opacity = 1
+            break;
+
+            //third break
+            
+            case 62 :
+              document.getElementById("courage-phylactere").style.opacity = 0
+            break;
+
+            case 63 :
+              document.getElementById("courage-phylactere").style.opacity = 1
+            break;
+            
+            // last break
+
+            case 75 :
+              document.getElementById("courage-phylactere").style.opacity = 0
+            break;
+
+            case 76 :
+              document.getElementById("courage-phylactere").style.opacity = 1
+            break;
         }
 
       

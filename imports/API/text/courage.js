@@ -1,5 +1,4 @@
-export const data = [
-"", // apparition de l'ouvreur
+export const data = ["", // apparition de l'ouvreur
 "", // apparation de sam 0
 "", // l'ouvreur tend la main
 "", // sam se met devant l'ouvreur
@@ -12,57 +11,72 @@ export const data = [
 "et se sont compromis avec les pouvoirs en place",
 "pour l'avancement de leur carrière",
 "au détriment du bon goût",
-"de la justice sociale" ,
+"de la justice sociale",
 "ou de la créativité musicale.",
+"", // fadeOut
+"quels sont les compositeurs et les compositrices,",
+"qui ont pourri l'ambiance sans ménagement", // interruption 1
+"ont vilifié leurs confrères et consoeurs", // interruption 1
+"n'ont fait preuve d'aucune retenue dans leur désir de séduire les forts", // interruption 1
+"et de fouler au pied les faibles,",  
+"", // samuel lève la tête!
+"", // samuel le mec lève le doigt
+"", // samuel se lève
+"", // le mec baisse le doigt
+"", // le mec passe.
 "...",
-"quels sont les compositeurs et les compositrices,",
-"qui ont pourri l'ambiance sans ménagement",
-"ont vilifié leurs confrères et consoeurs",
-"n'ont fait preuve d'aucune retenue dans leur désir de séduire les forts",
-"et de fouler au pied les faibles,",
-"ignorant celles et ceux qui n'avaient besoin que d'un petit encouragement pour que leur talent s'exprime aussi",
+"[...] et de fouler au pied les faibles,",  
+"ignorant celles et ceux qui n'avaient besoin que d'un petit encouragement",
+"pour que leur talent s'exprime aussi",
 "mais au contraire, les assassinant froidement dans le dos avec une petite phrase de mépris.",
-"comme par exemple, ils sont à un diner mondain",
+"comme par exemple, les compositeurs sont à un diner mondain",
 "et là personne ne leur demande leur avis à propos de rien",
-"mais ils entendent une personne même pas si importante, vétue néanmoins d'un smoking",
-"qui dit un truc du genre : ahh oui j'ai entendu untel qui a donné un récital, c'était super",
+"mais ils entendent une personne même pas si importante, vêtue néanmoins d'un smoking",
+"qui dit un truc du genre : ahh oui j'ai écouté le récital d'unetelle ou untel, c'était super",
 "et là ils traversent la salle en courant avec leur petit four dans la main,",
-"pour lâcher avec un petit rictus :",
+"pour lâcher avec un petit rictus :",
 "untel? peuh, ça m'a beaucoup déçu, je m'attendais à mieux",
-"comme si on en avait quelque chose à faire que ça l'ait personnellement déçu.",
+"comme si on en avait quelque chose à faire que ça les ait personnellement déçu.",
+"", // fadeOut
 "quels sont les compositeurs et les compositrices,",
-"qui ont publiquement mystifié l'exercice de leur art",
-"a des fins mesquines",
-"pour dissimuler le caractère arbitraire de leur réussite",
-"pour masquer tout ce qui aurait trait à de la reproduction sociale ou à du népotisme,",
+"qui ont publiquement mystifié l'exercice de leur art", // interruption 2
+"a des fins mesquines", // interruption 2
+"pour dissimuler le caractère accidentel de leur réussite,", // interruption 2
+"", // samuel leve la tet
+"", // samuel se lev
+"", // i pass
+"...",
+"[...] pour dissimuler le caractère accidentel de leur réussite,",
+"pour masquer tout ce qui aurait trait à de la reproduction sociale ou à du népotisme,", 
 "pour offusquer leur tours de main, leur méthodes, leur 'astuces' expressives",
 "même jusqu'à la conduite très concrète de leur journée de travail,",
 "tant leur paranoïa d'arriviste ne leur permet pas de vivre à visage découvert",
 "vous voyez ce que je veux dire?",
-"vous leur demandez simplement :",
+"vous leur demandez simplement :",
 "ah tiens bonjour M. Strauss, comment ça va? comment vous faites pour composer votre musique?",
 "et là tout paniqué il répond un truc du genre",
-"comment ça? ah ben c'est très simple, j'ai une technique imparable qui consiste à aller me ballader dans la forêt dès l'aube et hop!",
-"ou alors, une autre fois :",
+"comment ça? ah ben c'est très simple,",
+"j'ai une technique imparable qui consiste à aller me ballader dans la forêt dès l'aube et hop!",
+"ou alors, une autre fois :",
 "ah tiens bonjour M. Rossini, tiens vous avez l'air fatigué, pas trop dur le travail?",
-"et là il répond un truc du genre :",
+"et là il répond un truc du genre :",
 "ha ha! nan mais moi je travaille jamais, j'ai écrit mon dernier opéra aux toilettes.",
-"...",
+"", // fadeOut
 "vous allez découvrir une programmation spéciale",
 "effectuée par un comité d'artistes interprètes irrités",
 "qui ont décidé de vous faire écouter, ce qui, selon eux",
 "relève de la lâcheté intellectuelle et de l'inculture politique en musique",
 "en dernière partie de soirée,",
-"notre invité exceptionnel, le baryton Sébastien Soules",
+"notre invité exceptionnel,",
+"le baryton Sébastien Soules",
 "converti livreur à vélo par nécessité pendant le confinement lié à la maladie de covid-19",
 "viendra présenter sa nouvelle pièce d'opéra",
-"intitulée:",
+"intitulée :",
 "aller chercher soi-même sa pizza en vélo quand on est valide et en bonne santé",
-"est une question de dignité humaine.",
-"cette soirée est rendue possible par nos généreux mécènes",
-"que nous tenons à remercier chaleureusement",
-"merci à Uber, Amazon, BNP Paribas et Uniqlo."
+"est une question de dignité humaine."
 ]
+
+// espace fine insécable : 
 
 // "Mardi 25 Avril 2023",
 // "20h30",
