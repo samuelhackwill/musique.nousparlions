@@ -3,7 +3,7 @@ import './co2.css';
 import {data} from '../../API/text/co2.js';
 
 Template.co2SVG.onCreated(function(){
-    // console.log(data)
+    Meteor.call("insertStat", {story : "co2", timeToFinish : null, date : start})
     counter = new ReactiveVar(-1);
   })
 
@@ -232,6 +232,11 @@ const next = function(e){
           // if we're at the end of the text, tell car to go away
           // then fade out.
           console.log("END OF TEXT")
+
+          finish = new Date()
+          console.log("time to finish ", finish - start)
+          Meteor.call("updateStat", {story : "co2", timeToFinish : finish - start, date : start})
+
 
           document.removeEventListener("keyup", next)
           document.removeEventListener("touchstart", touchtouch)
