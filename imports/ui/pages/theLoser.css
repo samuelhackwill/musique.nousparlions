@@ -1,3 +1,8 @@
+@font-face {
+    font-family: fraktur;
+    src: url('/fonts/Fraktur.ttf') format('truetype');  
+}   
+
 #theLoser-titre{
     animation : showAndHideTitle 3s;
 }
@@ -37,4 +42,20 @@
 
 #nez-2-4-c{
     animation-delay: 250ms;
+}
+
+#theLoser-credits{
+    transition: opacity 3s;
+}
+
+#theLoser-bg{
+    transition: opacity 3s;
+}
+
+#p1{
+    transition: opacity 3s;
+}
+
+#p2{
+    transition: opacity 3s;
 }

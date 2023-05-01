@@ -7,6 +7,8 @@ import {data} from '../../API/text/theLoser.js';
 let cutscreen = false
 let dangColor = "#0000FF"
 let start = new Date()
+let lastPlayer = null
+
 
 Template.theLoserSVG.onCreated(function(){
     document.body.style.backgroundColor = dangColor
@@ -23,7 +25,7 @@ Template.theLoserSVG.onRendered(function(){
         document.getElementById("p2").style.opacity = 1
 
         setTimeout(() => {
-            document.getElementById("bg").style.opacity = 1
+            document.getElementById("theLoser-bg").style.opacity = 1
         }, 1000);
 
         document.addEventListener("keyup", next)
@@ -47,24 +49,24 @@ Template.theLoserSVG.helpers({
     return dangColor
   },
 
-	wrapLine(){
-        // this function's goal is to retrieve text and to split it in
-        // one to six lines. One very long word breaks the wrapping.
-    
-        // ALSO, the fact that we're using a different logic to limit
-        // insertions in the db (250 chars) is a problem. We would need
-        // to refactor the function in the conversationEditor to use
-        // the same logic, or to switch to a monospace font, etc.
-    
+	wrapLine(arg){
         index = counter.get();
         getText = data[index]?.text
         getSpeaker = data[index]?.player
         getBubble = parseInt(arg.hash.whichBubble)
+        
+        if (getBubble == 2 && index == 30){
+          return {
+            line1 : "bon il s'agit des",
+            line2 : "Variations Goldberg tu t'en",
+            line3: "doutes"
+          }
+        }
 
         if (getBubble != getSpeaker) {
             return
           }  
-
+        
         wrapCurrentWord = false
         wrapCounter = 0
         lineCounter = 1
@@ -134,6 +136,7 @@ Template.theLoserSVG.helpers({
         // "\n wrapCounter :", wrapCounter, 
         // "\n lineCounter :", lineCounter, 
         // "\n lines :", lines)
+
     
         return {
           line1:lines.line1.join(' '),
@@ -188,7 +191,6 @@ const killMarker = function(e){
 
 const destroyAnimatedStuff = function(){
   document.getElementById("instruct").innerHTML = ""
-  document.getElementById("co2-bg").innerHTML = ""
 }
 
 const next = function(e){
@@ -213,7 +215,28 @@ const next = function(e){
 
       
       index = counter.get()
+      _index = index + 1
       endOfText = data.length-1
+      player = data[_index]?.player
+
+
+      // yeah if it's a new player AND we're not at the very first line of text,
+      // we want to hide the previous speech bubble! well, make it ALL speech dialogs fu
+      if (lastPlayer != player && lastPlayer != null){
+        document.getElementById("loser-bulleG").style.opacity = "0"
+        document.getElementById("loser-bulleD").style.opacity = "0"
+        console.log(player)
+        if(player == 1){
+          document.getElementById("loser-bulleG").style.opacity = "1"
+        }
+        if(player == 2){
+          document.getElementById("loser-bulleD").style.opacity = "1"
+        }
+        if(index == 29){
+          document.getElementById("loser-bulleG").style.opacity = "1"
+          document.getElementById("loser-bulleD").style.opacity = "1"
+        }
+      }
 
         // TIMED EVENTS
 
@@ -229,8 +252,82 @@ const next = function(e){
                 smoke()
             break;
 
-            case 1 :
-                exhale()
+            case 2 :
+              document.getElementById("openbook").style.opacity = 0
+              document.getElementById("closedbook").style.opacity = 1
+            break;
+
+            case 16:
+              setTimeout(() => {
+                rawHTML = document.getElementById("loserBulleGTxt").children[0].outerHTML 
+                newHTML = rawHTML.replace("Wertheimer", "<tspan class='st36'>Wertheimer</tspan>")
+                console.log(newHTML)
+                document.getElementById("loserBulleGTxt").children[0].outerHTML = newHTML
+              }, 10);
+            break;
+
+            case 19:
+              setTimeout(() => {
+                rawHTML = document.getElementById("loserBulleDTxt").children[0].outerHTML 
+                newHTML = rawHTML.replace("Salzburg", "<tspan class='st36'>Salzburg</tspan>")
+                console.log(newHTML)
+                document.getElementById("loserBulleDTxt").children[0].outerHTML = newHTML
+              }, 10);
+            break;
+
+            case 22 :
+                smoke()
+            break;
+
+            case 23:
+              setTimeout(() => {
+                rawHTML = document.getElementById("loserBulleDTxt").children[2].outerHTML 
+                newHTML = rawHTML.replace("Mozartheum", "<tspan class='st36'>Mozartheum</tspan>")
+                console.log(newHTML)
+                document.getElementById("loserBulleDTxt").children[2].outerHTML = newHTML
+              }, 10);
+            break;
+
+            case 28:
+              setTimeout(() => {
+                next()
+                setTimeout(() => {
+                  rawHTML = document.getElementById("loserBulleGTxt").children[0].outerHTML 
+                  newHTML = rawHTML.replace("Gold", "<tspan class='st37'>Gold</tspan>")
+                  document.getElementById("loserBulleGTxt").children[0].outerHTML = newHTML
+                }, 10);
+              }, 500);
+            break;
+
+            case 34 :
+              document.getElementById("openbook").style.opacity = 1
+              document.getElementById("closedbook").style.opacity = 0
+            break;
+
+            case 43 :
+              setTimeout(() => {
+                document.getElementById("openbook").style.opacity = 0
+                document.getElementById("closedbook").style.opacity = 1
+              },500)
+            break;
+
+            case 49 :
+              document.getElementById("p1-tete-1").style.opacity = 0
+              document.getElementById("p1-tete-2").style.opacity = 1
+              document.getElementById("p1-bras-phone").style.opacity = 1
+            break;
+
+            case 54 :
+              setTimeout(() => {
+                document.getElementById("p1-tete-1").style.opacity = 1
+                document.getElementById("p1-tete-2").style.opacity = 0
+                document.getElementById("p1-bras-phone").style.opacity = 0
+              },1000)
+              break;
+
+
+            case 61 :
+              smoke()
             break;
         }
 
@@ -249,7 +346,20 @@ const next = function(e){
 
           document.getElementById("loser-bulleG").style.opacity = 0
           document.getElementById("loser-bulleD").style.opacity = 0
+          document.getElementById("p1-bras-repos").style.opacity = 0
+          document.getElementById("p1-tete-1").style.opacity = 0
+          document.getElementById("p1-tete-2").style.opacity = 1
+          document.getElementById("p1-bras-extinction").style.opacity = 1
+          document.getElementById("p1-cendrier").style.opacity = 1
+          document.getElementById("fumee-extinction").style.opacity = 1
+          document.getElementById("fumee-extinction").classList.add("smokeFloat")
 
+            setTimeout(() => {
+              document.getElementById("theLoser-bg").style.opacity = 0
+              document.getElementById("p1").style.opacity = 0
+              document.getElementById("p2").style.opacity = 0
+            }, 3000);  
+  
           finish = new Date()
           console.log("time to finish ", finish - start)
           Meteor.call("updateStat", {story : "theLoser", timeToFinish : finish - start, date : start})
@@ -271,8 +381,9 @@ const next = function(e){
           setTimeout(() => {
             console.log("bg should be dark, show credits")
             credits = document.getElementById("theLoser-credits")
+            document.body.style.transition = "all 1s"
             credits.style.opacity = "1"  
-          }, 2500)
+          }, 3000)
                       
 
           setTimeout(() => {
@@ -287,6 +398,7 @@ const next = function(e){
 
           return
         }
+        lastPlayer = player
     }
 
     smoke = function(){
@@ -304,14 +416,17 @@ const next = function(e){
             setTimeout(() => {
                 document.getElementById("boubrulant").style.opacity = 0
                 setTimeout(() => {                
-                    setTimeout(() => {
-                        document.getElementById("fumee-bas").style.opacity = 1
-                        document.getElementById("fumee-bas").classList.add("smokeFloat")
-                        document.getElementById("fumee-bas-c").classList.add("smokeLR")
-                    }, 100);
-                    document.getElementById("p1-bras-fume").style.opacity = 0
-                    document.getElementById("p1-bras-repos").style.opacity = 1
-                      }, 1000);        
+                  document.getElementById("p1-bras-fume").style.opacity = 0
+                  document.getElementById("p1-bras-repos").style.opacity = 1
+                  setTimeout(() => {
+                    document.getElementById("fumee-bas").style.opacity = 1
+                    document.getElementById("fumee-bas").classList.add("smokeFloat")
+                    document.getElementById("fumee-bas-c").classList.add("smokeLR")
+                  }, 100);
+                  setTimeout(() => {
+                    exhale()
+                  }, 1000);
+                }, 1000);        
             }, 1000);
         },500)
     }
