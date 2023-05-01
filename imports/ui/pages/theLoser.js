@@ -220,31 +220,17 @@ const next = function(e){
         switch (index) {
 
             case -1 :
-              document.getElementById("p1-tete-1").style.opacity = 1
-              document.getElementById("p1-tete-2").style.opacity = 0
-              document.getElementById("p1-bras-phone").style.opacity = 0
+                document.getElementById("p1-tete-1").style.opacity = 1
+                document.getElementById("p1-tete-2").style.opacity = 0
+                document.getElementById("p1-bras-phone").style.opacity = 0
             break;
 
             case 0 :
-              document.getElementById("p1-bras-fume").style.opacity = 1
-              document.getElementById("p1-bras-repos").style.opacity = 0
+                smoke()
             break;
 
             case 1 :
-                document.getElementById("boubrulant").style.opacity = 1
-            break;
-
-            case 2 :
-                document.getElementById("boubrulant").style.opacity = 0
-                setTimeout(() => {                
-                    setTimeout(() => {
-                        document.getElementById("fumee-bas").style.opacity = 1
-                        document.getElementById("fumee-bas").classList.add("smokeFloat")
-                        document.getElementById("fumee-bas-c").classList.add("smokeLR")
-                    }, 100);
-                    document.getElementById("p1-bras-fume").style.opacity = 0
-                    document.getElementById("p1-bras-repos").style.opacity = 1
-                      }, 500);
+                exhale()
             break;
         }
 
@@ -301,4 +287,124 @@ const next = function(e){
 
           return
         }
+    }
+
+    smoke = function(){
+        document.getElementById("p1-bras-fume").style.opacity = 1
+        document.getElementById("p1-bras-repos").style.opacity = 0
+
+        document.getElementById("fumee-bas").addEventListener("animationend", function(){
+          document.getElementById("fumee-bas").classList.remove("smokeFloat")
+          document.getElementById("fumee-bas-c").classList.remove("smokeLR")
+          document.getElementById("fumee-bas").style.opacity=0
+        })
+
+        setTimeout(() => {
+            document.getElementById("boubrulant").style.opacity = 1
+            setTimeout(() => {
+                document.getElementById("boubrulant").style.opacity = 0
+                setTimeout(() => {                
+                    setTimeout(() => {
+                        document.getElementById("fumee-bas").style.opacity = 1
+                        document.getElementById("fumee-bas").classList.add("smokeFloat")
+                        document.getElementById("fumee-bas-c").classList.add("smokeLR")
+                    }, 100);
+                    document.getElementById("p1-bras-fume").style.opacity = 0
+                    document.getElementById("p1-bras-repos").style.opacity = 1
+                      }, 1000);        
+            }, 1000);
+        },500)
+    }
+
+    exhale = function(){
+      // DRY as hell yes maam
+        nez1 = document.getElementById("nez-1")
+
+        nez2 = document.getElementById("nez-1-2")
+        nez2c = document.getElementById("nez-1-2-c")
+        nez3 = document.getElementById("nez-1-3")
+        nez3c = document.getElementById("nez-1-3-c")
+        nez4 = document.getElementById("nez-1-4")
+        nez4c = document.getElementById("nez-1-4-c")
+
+        nezarr2 = document.getElementById("nez-2-2")
+        nezarr2c = document.getElementById("nez-2-2-c")
+        nezarr3 = document.getElementById("nez-2-3")
+        nezarr3c = document.getElementById("nez-2-3-c")
+        nezarr4 = document.getElementById("nez-2-4")
+        nezarr4c = document.getElementById("nez-2-4-c")
+
+        nez1.style.opacity = 0.58
+
+        
+        nez2.addEventListener("animationend", function(){
+          nez2.classList.remove("smokeFloat")
+          nez2c.classList.remove("smokeLR")
+          nez2.style.opacity=0
+        })
+        
+        nez3.addEventListener("animationend", function(){
+          nez3.classList.remove("smokeFloat")
+          nez3c.classList.remove("smokeLR")
+          nez3.style.opacity=0
+        })
+        
+        nez4.addEventListener("animationend", function(){
+          nez4.classList.remove("smokeFloat")
+          nez4c.classList.remove("smokeLR")
+          nez4.style.opacity=0
+        })
+
+        
+        nezarr2.addEventListener("animationend", function(){
+          nezarr2.classList.remove("smokeFloat")
+          nezarr2c.classList.remove("smokeLR")
+          nezarr2.style.opacity=0
+        })
+        
+        nezarr3.addEventListener("animationend", function(){
+          nezarr3.classList.remove("smokeFloat")
+          nezarr3c.classList.remove("smokeLR")
+          nezarr3.style.opacity=0
+        })
+        
+        nezarr4.addEventListener("animationend", function(){
+          nezarr4.classList.remove("smokeFloat")
+          nezarr4c.classList.remove("smokeLR")
+          nezarr4.style.opacity=0
+        })
+
+        setTimeout(() => {
+            nez2.style.opacity = 0.58
+            nezarr2.style.opacity = 0.58
+
+            nez2.classList.add("smokeFloat")
+            nez2c.classList.add("smokeLR")
+            nezarr2.classList.add("smokeFloat")
+            nezarr2c.classList.add("smokeLR")
+        }, 250);
+
+        setTimeout(() => {
+            nez3.style.opacity = 0.58
+            nezarr3.style.opacity = 0.58
+
+            nez3.classList.add("smokeFloat")
+            nez3c.classList.add("smokeLR")
+            nezarr3.classList.add("smokeFloat")
+            nezarr3c.classList.add("smokeLR")
+        }, 500);
+
+        setTimeout(() => {
+            nez1.style.opacity = 0
+
+            nez4.style.opacity = 0.58
+            nezarr4.style.opacity = 0.58    
+
+            nezarr4.classList.add("smokeFloat")
+            nezarr4c.classList.add("smokeLR")
+            nez4.classList.add("smokeFloat")
+            nez4c.classList.add("smokeLR")
+        }, 750);
+
+
     }
