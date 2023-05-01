@@ -29,3 +29,10 @@ svg{
     top:50%;
     transform:translate(-50%, -50%);
 } */
+
+@keyframes showAndHideTitle {
+    0% {opacity : 0}
+    15% {opacity : 1}
+    85% {opacity : 1}
+    100% {opacity: 0;}
+}

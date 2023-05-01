@@ -6,6 +6,7 @@ import '../../ui/pages/co2.js';
 import '../../ui/pages/chatbot.js';
 import '../../ui/pages/bravo.js';
 import '../../ui/pages/courage.js';
+import '../../ui/pages/theLoser.js';
 import '../../ui/pages/home.js';
 
 FlowRouter.route('/co2', {
@@ -51,6 +52,19 @@ FlowRouter.route('/courage', {
   name: 'courage',
   action() {
     this.render('courageSVG');
+  },
+
+  waitOn() {
+    return [
+      Meteor.subscribe('stats')
+    ];
+  }
+});
+
+FlowRouter.route('/theLoser', {
+  name: 'theLoser',
+  action() {
+    this.render('theLoserSVG');
   },
 
   waitOn() {

@@ -1,0 +1,28 @@
+#theLoser-titre{
+    animation : showAndHideTitle 3s;
+}
+
+.smokeLR{
+    animation: smokeFLoatLR infinite linear 1s;
+}
+
+.smokeFloat{
+    animation: smokeFade linear 2s, smokeFloatTop linear 4s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes smokeFLoatLR {
+    0%, 50%, 100%{transform:translateX(0vw)}
+    25%{transform:translateX(-1vw)}
+    75%{transform:translateX(1vw)}
+}
+
+@keyframes smokeFloatTop {
+    0%{transform:translateY(0vw)}
+    100%{transform:translateY(-15vh)}
+}
+
+@keyframes smokeFade {
+    0%{opacity : 0.58}
+    100%{opacity : 0}
+}

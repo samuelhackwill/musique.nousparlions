@@ -96,13 +96,6 @@
     margin-right:500px
 }
 
-@keyframes showAndHideTitle {
-    0% {opacity : 0}
-    15% {opacity : 1}
-    85% {opacity : 1}
-    100% {opacity: 0;}
-}
-
 @keyframes carcasse {
     0%, 100% {transform : translateY(0vh)}
     50% {transform : translateY(-1vh)}
