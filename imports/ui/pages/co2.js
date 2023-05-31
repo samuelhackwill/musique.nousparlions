@@ -2,6 +2,8 @@ import './co2.html';
 import './co2.css';
 import {data} from '../../API/text/co2.js';
 
+let start = new Date()
+
 Template.co2SVG.onCreated(function(){
     Meteor.call("insertStat", {story : "co2", timeToFinish : null, date : start})
     counter = new ReactiveVar(-1);

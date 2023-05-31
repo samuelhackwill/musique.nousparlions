@@ -6,7 +6,7 @@ export const data = ["", // apparition de l'ouvreur
 "le programme de ce soir est dédié à l'absence de courage en musique.",
 "quels sont les compositeurs et les compositrices,",
 "qui au cours de leur carrière",
-"on le plus fait preuve d'obséquiosité",
+"ont le plus fait preuve d'obséquiosité",
 "de lâcheté, de conformisme",
 "et se sont compromis avec les pouvoirs en place",
 "pour l'avancement de leur carrière",

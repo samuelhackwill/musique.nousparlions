@@ -68,15 +68,21 @@
 }
 
 #house{
+    transform: translateX(-50vw);
     mix-blend-mode: multiply;
+    animation-fill-mode: forwards;  
 }
 
 #trees{
+    transform: translateX(-50vw);
     mix-blend-mode: multiply;
+    animation-fill-mode: forwards;  
 }
 
 #radar{
+    transform: translateX(-50vw);
     transition: translateX 10s;
+    animation-fill-mode: forwards;  
 }
 
 #bulle{
