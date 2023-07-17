@@ -326,7 +326,7 @@ const next = function(e){
               break;
 
 
-            case 61 :
+            case 62 :
               smoke()
             break;
         }

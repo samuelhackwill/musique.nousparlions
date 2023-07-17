@@ -54,6 +54,7 @@ export const data = [
     {player : 1, text : "   'En 1962, il fait part à son entourage'"},
     {player : 1, text : "   'de sa fatigue de devoir se produire devant des auditoires distraits,'"},
     {player : 1, text : "   'qui toussent ou attendent la fausse note'"},
+    {player : 1, text : "   ...nous dit wikipedia."},
     {player : 2, text : "oui ben c'est un option en effet"},
     {player : 2, text : "dès qu'on a l'occasion d'utiliser des termes pseudo-psychologiques"},
     {player : 2, text : "pour justifier notre propre médiocrité"},
